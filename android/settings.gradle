@@ -5,6 +5,6 @@ With a normal instalation with node_modules:
   project(':onboarding').projectDir = new File(rootProject.projectDir,'node_modules/react-native-alice/android/onboarding')
 */
 include ':onboarding'
-project(':onboarding').projectDir = new File(rootProject.projectDir,'../node_modules/react-native-alice/framework/android/')
+project(':onboarding').projectDir = new File(rootProject.projectDir,'../node_modules/onboarding-react-native/framework/android/')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
