@@ -19,42 +19,29 @@ Getting Started with this npm module
 We provide a NPM Module with android ios react native in this package. 
 
 
-module/onboarding-react-native.tgz
+onboarding-react-native.tgz
 
 
-# AppOnboardingSample
+# Example App
 
-We provide a React App as a real example for an integration with the onboarding-react-native module.
+This is a example project as a real example for an integration with the onboarding-react-native module.
 
 
-First of all, you have to copy the onboarding-react-native module into AppOnboardingSample of the sample application:
+First of all, you have to download the onboarding-react-native module into root project.
 
 ```bash
-cd AppOnboardingSample
 cp ../module/onboarding-react-native.tgz ./
 ```
 
 **NOTE**: you can just copy it using your prefered file browser.
 
 
-Then, make this command in AppOnboardingSample folder, this command will install all need dependencies
+Then, make the following command in root folder, this command will install all need dependencies:
 
-```bash
-cd AppOnboardingSample
-npm install onboarding-react-native.tgz --save
-```
 
 ```bash
 npm install --save
 ```
-
-Link your native dependencies:
-
-```bash
-react-native link onboarding-react-native
-```
-
-Done! All libraries with native dependencies should be successfully linked to your iOS/Android project.
 
 
 Now, you should be ready to test the application.
