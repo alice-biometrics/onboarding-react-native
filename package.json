@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
-    "@woonivers/react-native-alice": "file:woonivers-react-native-alice-v2.0.0.tgz",
+    "onboarding-react-native": "file:onboarding-react-native.tgz",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-alice": "file:react-native-alice-1.3.0.tgz",

@@ -4,7 +4,7 @@ const root = path.resolve(__dirname, '..');
 
 module.exports = {
   dependencies: {
-    '@woonivers/react-native-alice': {
+    'onboarding-react-native': {
       root: root,
     },
   },
