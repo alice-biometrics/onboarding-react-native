@@ -8,7 +8,7 @@ The main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
 
-## Requirements 
+## Requirements :hammer:
 
 * [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or [yarn](https://classic.yarnpkg.com/en/docs/install/)
 * [react-native](https://facebook.github.io/react-native/docs/getting-started)
@@ -18,7 +18,7 @@ The main features are:
   * [firebase credentials](https://firebase.google.com/docs/android/setup) (google-services.json)
   * All versions of Android are supported since Android 5.0 (LOLLIPOP).
 
-## Installation
+## Installation :computer:
 
 We provide a npm module (`onboarding-react-native.tgz`) with a react-native component. Native frameworks (Android and iOS) are included in the package.
 
@@ -69,7 +69,7 @@ android {
 ```
 
 
-## Run App Example
+## Run App Example :calling:
 
 #### iOS
 
