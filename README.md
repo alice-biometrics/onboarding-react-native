@@ -172,3 +172,7 @@ Or just open the Android Studio workspace and run it manually:
 ## Documentation :page_facing_up:
 
 For more information about ALiCE Onboarding:  https://docs.alicebiometrics.com/onboarding/
+
+## Contact :mailbox_with_mail:
+
+support@alicebiometrics.com
