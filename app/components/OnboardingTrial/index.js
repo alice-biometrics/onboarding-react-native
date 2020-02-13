@@ -30,7 +30,7 @@ class OnboardingTrial extends Component {
 
 	}
 
-	backToHome(title, value) {
+	backToPrevious(title, value) {
 		this.props.navigation.navigate('InputTrial')
 		Alert.alert(title, value)
 	}
@@ -54,9 +54,9 @@ class OnboardingTrial extends Component {
 			            firstName={firstName}
 			            lastName={lastName}
 			            config={ONBOARDING_CONFIG}
-			            onSuccess={(value) => this.backToHome("onSuccess", value) }
-			            onFailure={(value) => this.backToHome("onFailure", value) }
-			            onCancel={(value) => this.backToHome("onCancel", value) }
+			            onSuccess={(value) => this.backToPrevious("onSuccess", value) }
+			            onFailure={(value) => this.backToPrevious("onFailure", value) }
+			            onCancel={(value) => this.backToPrevious("onCancel", value) }
 			          />
 			          {global.HermesInternal == null ? null : (
 			            <View style={styles.engine}>

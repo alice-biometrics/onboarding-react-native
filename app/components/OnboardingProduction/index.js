@@ -10,7 +10,7 @@ const ONBOARDING_CONFIG = {
         {"stage": "addDocument", "type": "idcard"},
     ],
     "localization": {
-        "language": "es"
+        "language": "en"
     },
     "appearance": {
         "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
@@ -28,7 +28,7 @@ class OnboardingProduction extends Component {
 
 	}
 
-	backToHome(title, value) {
+	backToPrevious(title, value) {
 		this.props.navigation.navigate('InputProduction')
 		Alert.alert(title, value)
 	}
@@ -46,9 +46,9 @@ class OnboardingProduction extends Component {
 			          <Onboarding
 			            userToken={userToken}
 			            config={ONBOARDING_CONFIG}
-			            onSuccess={(value) => this.backToHome("onSuccess", value) }
-			            onFailure={(value) => this.backToHome("onFailure", value) }
-			            onCancel={(value) => this.backToHome("onCancel", value) }
+			            onSuccess={(value) => this.backToPrevious("onSuccess", value) }
+			            onFailure={(value) => this.backToPrevious("onFailure", value) }
+			            onCancel={(value) => this.backToPrevious("onCancel", value) }
 			          />
 			          {global.HermesInternal == null ? null : (
 			            <View style={styles.engine}>
