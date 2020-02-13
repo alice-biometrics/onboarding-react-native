@@ -10,7 +10,7 @@ The main features are:
 
 ## Requirements :hammer:
 
-* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or [yarn](https://classic.yarnpkg.com/en/docs/install/)
+* Package Manager: Use [yarn](https://classic.yarnpkg.com/en/docs/install/) or [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 
 * [react-native](https://facebook.github.io/react-native/docs/getting-started)
 * iOS specific:
   * [cocoapods](https://guides.cocoapods.org/using/getting-started.html)
@@ -44,12 +44,11 @@ pod install
 cd ..
 ```
 
-**Add onboarding-react-native to your iOS project**
+or 
 
-* Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
-* We strongly recommended to lock the orientation to portrait.
-
-
+```console
+yarn cocoapods # or npm cocoapods
+```
 
 ### Android
 
@@ -74,6 +73,37 @@ android {
     
 ...
 ```
+
+## Run App Example :calling:
+
+### iOS
+
+```console
+react-native run-ios
+```
+
+Or just open the XCode workspace and run it manually:
+
+```console
+open ios/example.xcworkspace/
+```
+
+### Android
+
+```console
+react-native run-android
+```
+
+Or just open the Android Studio workspace and run it manually.
+
+
+**Add onboarding-react-native to your iOS project**
+
+* Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
+* We strongly recommended to lock the orientation to portrait.
+
+
+
 
 **Add onboarding-react-native to your Android project**
 
@@ -145,29 +175,6 @@ dependencies {
 }
 apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
 ```
-
-
-## Run App Example :calling:
-
-### iOS
-
-```console
-react-native run-ios
-```
-
-Or just open the XCode workspace and run it manually:
-
-```console
-open ios/example.xcworkspace/
-```
-
-### Android
-
-```console
-react-native run-android
-```
-
-Or just open the Android Studio workspace and run it manually:
 
 ## Documentation :page_facing_up:
 
