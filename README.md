@@ -169,6 +169,6 @@ react-native run-android
 
 Or just open the Android Studio workspace and run it manually:
 
-# Documentation
+## Documentation :page_facing_up:
 
 For more information about ALiCE Onboarding:  https://docs.alicebiometrics.com/onboarding/
