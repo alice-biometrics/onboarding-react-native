@@ -37,7 +37,7 @@ const ONBOARDING_CONFIG = {
 
 Add our React Native component in your application adding:
 
-```js
+```html
 <OnboardingWithSandbox
   sandboxToken={sandboxToken}
   email={email}
@@ -60,7 +60,7 @@ see an example [here](app/components/OnboardingTrial/index.js)
 
 Add our React Native component in your application adding:
 
-```js
+```html
 <Onboarding
   userToken={userToken}
   config={ONBOARDING_CONFIG}
@@ -122,7 +122,7 @@ For Android application is required to add to the project a valid Firebase Crede
 Copy your google-services.json file for the example application inside the android/app module.
 
 ```console
-cp google-services.json android/app
+cp ~/Downloads/google-services.json android/app/
 ```
 
 Your `google-services.json` should have a bundleId associate. Please, change in `android/app/build.gradle`
