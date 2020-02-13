@@ -34,7 +34,7 @@ Install with npm:
 npm install --save
 ```
 
-#### iOS
+### iOS
 
 Install dependencies with `cocoapods` is required:
 
@@ -44,7 +44,14 @@ pod install
 cd ..
 ```
 
-#### Android
+**Add onboarding-react-native to your iOS project**
+
+* Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
+* We strongly recommended to lock the orientation to portrait.
+
+
+
+### Android
 
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
@@ -68,10 +75,81 @@ android {
 ...
 ```
 
+**Add onboarding-react-native to your Android project**
+
+
+1. Add camera permisions to your app, and Add AliceActivity.
+      - Modify `android/app/src/main/AndroidManifest.xml` this:
+
+```xml
+  <manifest>
+    <uses-permission android:name="android.permission.CAMERA" /> <!--Add this -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!--Add this -->
+
+    <uses-feature android:name="android.hardware.camera" /> <!--Add this -->
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!--Add this -->
+    <!-- > ... -->
+    <activity android:name="com.rnalice.AliceActivity" /> <!--Add this -->
+  </manifest>
+```
+
+2. We strongly recommended to lock the orientation to portrait.
+
+
+3. Modify `android/build.gradle` with:
+
+```gradle
+buildscript {
+    ext {
+        buildToolsVersion = "28.0.3"
+        minSdkVersion = 21 // Modify this (at least 21)
+        compileSdkVersion = 28
+        targetSdkVersion = 28
+        kotlinVersion = '1.3.11' // Add this
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.4.2")
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion" // Add this
+        classpath 'com.google.gms:google-services:4.3.2' // Add this (firebase related)
+    }
+}
+```
+
+4. Modify `android/settings.gradle` with:
+
+```gradle
+include ':onboarding' // Add this
+project(':onboarding').projectDir = new File(rootProject.projectDir,'../node_modules/onboarding-react-native/android/onboarding') // Add this
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+```
+
+5. Modify `android/app/build.gradle` with:
+
+```gradle
+...
+android {
+  ...
+  defaultConfig {
+    ...
+    multiDexEnabled true // Add this
+  }
+  ...
+}
+dependencies {
+  ...
+  implementation 'com.google.firebase:firebase-analytics:17.2.0' // Add this (firebase related)
+}
+apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
+```
+
 
 ## Run App Example :calling:
 
-#### iOS
+### iOS
 
 ```console
 react-native run-ios
@@ -83,7 +161,7 @@ Or just open the XCode workspace and run it manually:
 open ios/example.xcworkspace/
 ```
 
-#### Android
+### Android
 
 ```console
 react-native run-android
