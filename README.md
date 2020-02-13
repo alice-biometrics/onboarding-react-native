@@ -112,9 +112,7 @@ yarn cocoapods
 or 
 
 ```console
-cd ios
-pod install
-cd ..
+cd ios; pod install; cd ..
 ```
 
 ### Android
