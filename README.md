@@ -1,4 +1,4 @@
-# onboarding-react-native :octocat:
+# onboarding-react-native :point_left:
 
 ALiCE Onboarding React Native component allows the automatic capture of documents and video selfie of the user in real time from the camera of your device. It also simplifies the communication with the onboarding API to facilitate rapid integration and development. It manages the onboarding flow configuration: requested documents and order.
 
@@ -8,7 +8,7 @@ The main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
 
-## Usage
+## Usage :wave:
 
 ### Configuration
 
@@ -164,7 +164,7 @@ react-native run-android
 Or just open the Android Studio workspace and run it manually.
 
 
-## onboarding-react-native in your App 
+## Use ALiCE Onboarding in your React Native App :ok_hand:
 
 ### Add onboarding-react-native to your iOS project
 
@@ -172,7 +172,7 @@ Or just open the Android Studio workspace and run it manually.
 * We strongly recommended to lock the orientation to portrait.
 
 
-### Add onboarding-react-native to your Android project**
+### Add onboarding-react-native to your Android project
 
 
 1. Add camera permisions to your app, and Add AliceActivity.
