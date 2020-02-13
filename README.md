@@ -31,7 +31,7 @@ cp ~/Downloads/onboarding-react-native.tgz .
 Install with npm:
 
 ```console
-npm install --save
+yarn install --save
 ```
 
 ### iOS
@@ -47,7 +47,7 @@ cd ..
 or 
 
 ```console
-yarn cocoapods # or npm cocoapods
+yarn cocoapods
 ```
 
 ### Android
@@ -101,8 +101,6 @@ Or just open the Android Studio workspace and run it manually.
 
 * Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
 * We strongly recommended to lock the orientation to portrait.
-
-
 
 
 **Add onboarding-react-native to your Android project**
