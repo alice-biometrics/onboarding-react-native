@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { View, SafeAreaView, ScrollView, Alert } from 'react-native'
-import { OnboardingWithSandbox } from 'onboarding-react-native';
+import Onboarding from 'onboarding-react-native';
 
 import styles from './styles'
-
-
 
 const ONBOARDING_CONFIG = {
     "stages": [
@@ -23,7 +21,7 @@ const ONBOARDING_CONFIG = {
     }
 }
 
-class OnboardingTrial extends Component {
+class OnboardingProduction extends Component {
 
 	constructor(props) {
 	  super(props)
@@ -31,16 +29,13 @@ class OnboardingTrial extends Component {
 	}
 
 	backToHome(title, value) {
-		this.props.navigation.navigate('InputTrial')
+		this.props.navigation.navigate('InputProduction')
 		Alert.alert(title, value)
 	}
 
 	render() {
 		const {heading, input, parent} = styles
-	  	const sandboxToken = this.props.navigation.getParam("sandboxToken", "")
-	  	const email = this.props.navigation.getParam("email", "")
-	  	const firstName = this.props.navigation.getParam("firstName", "")
-	  	const lastName = this.props.navigation.getParam("lastName", "")
+	  	const userToken = this.props.navigation.getParam("userToken", "")
 
 		return (
 			<View style={parent}>
@@ -48,11 +43,8 @@ class OnboardingTrial extends Component {
 			        <ScrollView
 			          contentInsetAdjustmentBehavior="automatic"
 			          style={styles.scrollView}>
-			          <OnboardingWithSandbox
-			            sandboxToken={sandboxToken}
-			            email={email}
-			            firstName={firstName}
-			            lastName={lastName}
+			          <Onboarding
+			            userToken={userToken}
 			            config={ONBOARDING_CONFIG}
 			            onSuccess={(value) => this.backToHome("onSuccess", value) }
 			            onFailure={(value) => this.backToHome("onFailure", value) }
@@ -70,4 +62,4 @@ class OnboardingTrial extends Component {
 	}
 }
 
-export default OnboardingTrial
+export default OnboardingProduction

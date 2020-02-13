@@ -20,6 +20,8 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+yarn.lock
+ios/Podfile.lock
 
 google-services.json
 

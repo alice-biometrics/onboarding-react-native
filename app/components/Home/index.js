@@ -17,25 +17,9 @@ class Home extends Component {
 		}
 	}
 
-	aliceOnboarding() {
-		const {sandboxToken, email, firstName, lastName} = this.state
-
-		if (sandboxToken == "") {
-			Alert.alert("Error", "Please, type your SANDBOX TOKEN to test the Onboarding")
-			return
-		}
-		if (email == "") {
-			Alert.alert("Error","Please, type a email to test the Onboarding")
-			return 
-		}
-
-		this.props.navigation.navigate('Onboarding', {
-			sandboxToken: this.state.sandboxToken,
-			email: this.state.email,
-			firstName: this.state.firstName,
-			lastName: this.state.lastName
-		})
-
+	showInputScreen(screenId) {
+		console.log(screenId)
+		this.props.navigation.navigate(screenId)
 	}
 
 	render() {
@@ -43,29 +27,8 @@ class Home extends Component {
 		return (
 			<View style={parent}>
 				<Text style={heading}> ALiCE Onboarding </Text>
-				<TextInput 
-					style={input} 
-					placeholder="SANDBOX TOKEN (Required)" 
-					     autoCapitalize = 'none'
-					onChangeText={ text => this.setState({sandboxToken: text}) }
-				/>
-				<TextInput 
-					style={input}  
-					placeholder="email (Required)"
-					autoCapitalize = 'none'
-					onChangeText={ text => this.setState({email: text}) }
-				/>
-				<TextInput 
-					style={input} 
-					placeholder="First Name (Optional)" 
-					onChangeText={ text => this.setState({firstName: text}) }
-				/>
-				<TextInput 
-					style={input} 
-					placeholder="Last Name (Optional)" 
-					onChangeText={ text => this.setState({lastName: text}) }
-				/>
-				<Button title={"Login"} onPress={_ => this.aliceOnboarding()}/>
+				<Button title={"Sandbox Integration"} onPress={_ => this.showInputScreen('InputTrial')}/>
+				<Button title={"Production Integration"} onPress={_ => this.showInputScreen('InputProduction')}/>
 			</View>
 		)
 	}

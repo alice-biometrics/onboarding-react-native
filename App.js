@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Home from './app/components/Home';
+import InputTrial from './app/components/InputTrial';
 import OnboardingTrial from './app/components/OnboardingTrial';
+import InputProduction from './app/components/InputProduction';
+import OnboardingProduction from './app/components/OnboardingProduction';
 
 const RootStack = createStackNavigator(
 	{
 	  Home: Home,
-	  Onboarding: OnboardingTrial
-	  //Onboarding: OnboardingProduction 
+	  InputTrial: InputTrial,
+	  InputProduction: InputProduction,
+	  OnboardingTrial: OnboardingTrial,
+	  OnboardingProduction: OnboardingProduction 
 	}
 )
 
