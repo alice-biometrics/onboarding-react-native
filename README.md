@@ -164,13 +164,15 @@ react-native run-android
 Or just open the Android Studio workspace and run it manually.
 
 
-**Add onboarding-react-native to your iOS project**
+## onboarding-react-native in your App 
+
+### Add onboarding-react-native to your iOS project
 
 * Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
 * We strongly recommended to lock the orientation to portrait.
 
 
-**Add onboarding-react-native to your Android project**
+### Add onboarding-react-native to your Android project**
 
 
 1. Add camera permisions to your app, and Add AliceActivity.
