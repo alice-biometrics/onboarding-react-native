@@ -104,11 +104,11 @@ yarn install --save
 If this not work, please check if your version file matches with the required in the [package.json](package.json)
 
 ```json
-...
+{
 "onboarding-react-native": "file:onboarding-react-native-{VERSION}.tgz",
                                                              ^
                                                              |_____ Check this version
-...
+}
 ```
 
 ### iOS
