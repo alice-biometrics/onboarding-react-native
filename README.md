@@ -92,13 +92,23 @@ We provide a npm module (`onboarding-react-native.tgz`) with a react-native comp
 First of all, copy the package to your project. To check the npm module, you can use this app:
 
 ```console
-cp ~/Downloads/onboarding-react-native.tgz .
+cp ~/Downloads/onboarding-react-native-{VERSION}.tgz .
 ```
 
 Install with npm:
 
 ```console
 yarn install --save
+```
+
+If this not work, please check if your version file matches with the required in the [package.json](package.json)
+
+```json
+...
+"onboarding-react-native": "file:onboarding-react-native-{VERSION}.tgz",
+                                                             ^
+                                                             |_____ Check this version
+...
 ```
 
 ### iOS
