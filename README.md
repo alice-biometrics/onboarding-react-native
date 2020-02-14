@@ -1,4 +1,4 @@
-# onboarding-react-native :point_left:
+# onboarding-react-native  ⚛️ 
 
 ALiCE Onboarding React Native component allows the automatic capture of documents and video selfie of the user in real time from the camera of your device. It also simplifies the communication with the onboarding API to facilitate rapid integration and development. It manages the onboarding flow configuration: requested documents and order.
 
