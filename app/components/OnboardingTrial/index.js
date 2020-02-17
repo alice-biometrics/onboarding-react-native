@@ -37,7 +37,7 @@ class OnboardingTrial extends Component {
 
 	render() {
 		const {heading, input, parent} = styles
-	  	const sandboxToken = this.props.navigation.getParam("sandboxToken", "")
+	  	const sandboxToken = this.props.navigation.getParam("sandboxToken", "").replace(/(\r\n|\n|\r)/gm,"")
 	  	const email = this.props.navigation.getParam("email", "")
 	  	const firstName = this.props.navigation.getParam("firstName", "")
 	  	const lastName = this.props.navigation.getParam("lastName", "")
