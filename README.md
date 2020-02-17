@@ -1,4 +1,4 @@
-# onboarding-react-native
+# onboarding-react-native  ⚛️ [![doc](https://img.shields.io/badge/doc-onboarding-51CB56)](https://docs.alicebiometrics.com/onboarding/)
 
 ALiCE Onboarding React Native component allows the automatic capture of documents and video selfie of the user in real time from the camera of your device. It also simplifies the communication with the onboarding API to facilitate rapid integration and development. It manages the onboarding flow configuration: requested documents and order.
 
@@ -8,7 +8,7 @@ The main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
 
-## Usage
+## Usage :wave:
 
 ### Configuration
 
@@ -37,7 +37,7 @@ const ONBOARDING_CONFIG = {
 
 Add our React Native component in your application adding:
 
-```js
+```html
 <OnboardingWithSandbox
   sandboxToken={sandboxToken}
   email={email}
@@ -60,7 +60,7 @@ see an example [here](app/components/OnboardingTrial/index.js)
 
 Add our React Native component in your application adding:
 
-```js
+```html
 <Onboarding
   userToken={userToken}
   config={ONBOARDING_CONFIG}
@@ -81,24 +81,38 @@ see an example [here](app/components/OnboardingProduction/index.js)
 * [react-native](https://facebook.github.io/react-native/docs/getting-started)
 * iOS specific:
   * [cocoapods](https://guides.cocoapods.org/using/getting-started.html)
+  * All versions of iOS are supported since iOS 11.0 (Swift 5.0)
 * Android specific:
   * [firebase credentials](https://firebase.google.com/docs/android/setup) (google-services.json)
   * All versions of Android are supported since Android 5.0 (LOLLIPOP).
 
 ## Installation :computer:
 
-We provide a npm module (`onboarding-react-native.tgz`) with a react-native component. Native frameworks (Android and iOS) are included in the package.
+We provide a npm module (`onboarding-react-native-{VERSION}.tgz`) with a react-native component. Native frameworks (Android and iOS) are included in the package.
+
+**How do I get the package?**
+
+* Contact us through the following mail: support@alicebiometrics.com 📬
+* Through public registry (coming soon 🚧)
 
 First of all, copy the package to your project. To check the npm module, you can use this app:
 
 ```console
-cp ~/Downloads/onboarding-react-native.tgz .
+cp ~/Downloads/onboarding-react-native-{VERSION}.tgz .
 ```
 
 Install with npm:
 
 ```console
 yarn install --save
+```
+
+If this not work, please check if your version file matches with the required in the [package.json](package.json)
+
+```json
+"onboarding-react-native": "file:onboarding-react-native-{VERSION}.tgz",
+                                                             ^
+                                                             |_____ Check this version
 ```
 
 ### iOS
@@ -112,9 +126,7 @@ yarn cocoapods
 or 
 
 ```console
-cd ios
-pod install
-cd ..
+cd ios; pod install; cd ..
 ```
 
 ### Android
@@ -124,7 +136,7 @@ For Android application is required to add to the project a valid Firebase Crede
 Copy your google-services.json file for the example application inside the android/app module.
 
 ```console
-cp google-services.json android/app
+cp ~/Downloads/google-services.json android/app/
 ```
 
 Your `google-services.json` should have a bundleId associate. Please, change in `android/app/build.gradle`
@@ -164,13 +176,15 @@ react-native run-android
 Or just open the Android Studio workspace and run it manually.
 
 
-**Add onboarding-react-native to your iOS project**
+## Use ALiCE Onboarding in your React Native App :ok_hand:
+
+### Add onboarding-react-native to your iOS project
 
 * Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
 * We strongly recommended to lock the orientation to portrait.
 
 
-**Add onboarding-react-native to your Android project**
+### Add onboarding-react-native to your Android project
 
 
 1. Add camera permisions to your app, and Add AliceActivity.
