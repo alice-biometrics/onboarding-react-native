@@ -33,6 +33,24 @@ const ONBOARDING_CONFIG = {
 }
 ```
 
+### Using ALiCE Onboarding on Production
+
+Add our React Native component in your application adding:
+
+```html
+<Onboarding
+  userToken={userToken}
+  config={ONBOARDING_CONFIG}
+  onSuccess={(value) => console.log("onSuccess:" + value) }
+  onFailure={(value) => console.log("onFailure:" + value) }
+  onCancel={(value) => console.log("onCancel:" + value) }
+/>
+```
+
+Where `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend.
+
+see an example [here](app/components/OnboardingProduction/index.js)
+
 ### Using ALiCE Onboarding on Trial
 
 Add our React Native component in your application adding:
@@ -55,24 +73,6 @@ Where `sandboxToken` is a temporal token for testing the technology in a develop
 An `email` is required to associate it to an ALiCE `user_id`.
 
 see an example [here](app/components/OnboardingTrial/index.js)
-
-### Using ALiCE Onboarding on Production
-
-Add our React Native component in your application adding:
-
-```html
-<Onboarding
-  userToken={userToken}
-  config={ONBOARDING_CONFIG}
-  onSuccess={(value) => console.log("onSuccess:" + value) }
-  onFailure={(value) => console.log("onFailure:" + value) }
-  onCancel={(value) => console.log("onCancel:" + value) }
-/>
-```
-
-Where `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend.
-
-see an example [here](app/components/OnboardingProduction/index.js)
 
 
 ## Requirements :hammer:
