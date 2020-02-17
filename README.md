@@ -53,13 +53,7 @@ If this not work, please check if your version file matches with the required in
 Install dependencies with `cocoapods` is required:
 
 ```console
-yarn cocoapods
-```
-
-or 
-
-```console
-cd ios; pod install; cd ..
+yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
 
 ### Android
@@ -76,14 +70,9 @@ Your `google-services.json` should have a bundleId associate. Please, change in 
 
 ```gradle
 android {
-    ...
-
     defaultConfig {
         applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
-        ...
     }
-    
-...
 ```
 
 ## Usage :wave:
