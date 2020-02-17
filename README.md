@@ -1,4 +1,4 @@
-# onboarding-react-native  ⚛️ 
+# onboarding-react-native  ⚛️ [![doc](https://img.shields.io/badge/doc-onboarding-51CB56)](https://docs.alicebiometrics.com/onboarding/)
 
 ALiCE Onboarding React Native component allows the automatic capture of documents and video selfie of the user in real time from the camera of your device. It also simplifies the communication with the onboarding API to facilitate rapid integration and development. It manages the onboarding flow configuration: requested documents and order.
 
@@ -92,7 +92,7 @@ We provide a npm module (`onboarding-react-native-{VERSION}.tgz`) with a react-n
 
 **How do I get the package?**
 
-* Contact us through the following mail: support@alicebiometrics.com
+* Contact us through the following mail: support@alicebiometrics.com 📬
 * Through public registry (coming soon 🚧)
 
 First of all, copy the package to your project. To check the npm module, you can use this app:
