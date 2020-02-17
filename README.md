@@ -88,7 +88,12 @@ see an example [here](app/components/OnboardingProduction/index.js)
 
 ## Installation :computer:
 
-We provide a npm module (`onboarding-react-native.tgz`) with a react-native component. Native frameworks (Android and iOS) are included in the package.
+We provide a npm module (`onboarding-react-native-{VERSION}.tgz`) with a react-native component. Native frameworks (Android and iOS) are included in the package.
+
+**How do I get the package?**
+
+* Contact us through the following mail: support@alicebiometrics.com
+* Through public registry (coming soon 🚧)
 
 First of all, copy the package to your project. To check the npm module, you can use this app:
 
