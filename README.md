@@ -81,6 +81,7 @@ see an example [here](app/components/OnboardingProduction/index.js)
 * [react-native](https://facebook.github.io/react-native/docs/getting-started)
 * iOS specific:
   * [cocoapods](https://guides.cocoapods.org/using/getting-started.html)
+  * All versions of iOS are supported since iOS 11.0.
 * Android specific:
   * [firebase credentials](https://firebase.google.com/docs/android/setup) (google-services.json)
   * All versions of Android are supported since Android 5.0 (LOLLIPOP).
