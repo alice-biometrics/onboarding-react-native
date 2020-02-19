@@ -1,8 +1,7 @@
 /* 
-  en.strings
-  example
+  Localizable.strings
+  AppOnboardingSample
 
-  Created by macbookpro on 20/01/2020.
   Copyright © 2019 ALiCE. All rights reserved.
 */
 
@@ -12,8 +11,8 @@
 "onboarding_title_connection_error"= "Connection error";
 "onboarding_subtitle_connection_error"= "Please, check your internet connection";
 
-"onboarding_title_technical_error"= "Well, this is embarrassing.";
-"onboarding_subtitle_technical_error"= "Looks like we are experiencing technical issues, please try again.";
+"onboarding_title_technical_error"= "An error occurred.";
+"onboarding_subtitle_technical_error"= "Please, try again.";
 
 //onboarding stages
 "onboarding_stage_completed"= "Completed";
@@ -24,12 +23,12 @@
 "onboarding_stage_passport" = "Passport";
 "onboarding_stage_select_document" = "Select country";
 
-"onboarding_stage_already_completed" = "Paso ya completado";
+"onboarding_stage_already_completed" = "Stage already completed";
 
 "onboarding_finish_succesfully"= "Congrats! You have successfully completed the onboarding process.";
 "onboarding_onboarding_config_error"= "Please, review your OnboardingConfig. You should select at least one Onboarding Stage";
 
-"onboarding_description_stages"= "You have to complete all the steps, this will take a couple of minutes";
+"onboarding_description_stages"= "Please, complete the following steps for a successful onboarding!";
 "onboarding_cancel_button"= "Cancel";
 "onboarding_stages_done_button"="DONE";
 "onboarding_stages_start_button"="START";
@@ -40,7 +39,7 @@
 "onboarding_capture_document_done_button"="DONE";
 "onboarding_intermediate_document_subtitle"="Please, proceed with document capture";
 
-"onboarding_select_document_subtitle_issuing_country"="Please, select the issuing country";
+"onboarding_select_document_subtitle_issuing_country"="Select the issuing country";
 "onboarding_country_no_selected"="Please, select the issuing country";
 
 
@@ -62,8 +61,8 @@
 "onboarding_manual_capture"= "Manual capture";
 "onboarding_retry"= "Retry";
 
-"onboarding_title_document_not_recognised"= "We are having some trouble with the automatic reading of the document.";
-"onboarding_subtitle_document_not_recognised"= "You can retry or move to manual capture.";
+"onboarding_title_document_not_recognised"= "The document could not be read.";
+"onboarding_subtitle_document_not_recognised"= "Please, try again.";
 
 "onboarding_authenticating"="Authenticating...";
 "onboarding_adding_selfie"="Adding Selfie...";
@@ -72,7 +71,9 @@
 
 "onboarding_front_side"="FRONT SIDE";
 "onboarding_back_side"="BACK SIDE";
+"onboarding_info_page"="INFO PAGE";
 "onboarding_tap_here"="TAP HERE";
+
 
 "onboarding_other_country_list" = "Other";
 "onboarding_start" = "Start";

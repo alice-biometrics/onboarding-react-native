@@ -11,8 +11,8 @@
 "onboarding_title_connection_error"= "Error de conexión";
 "onboarding_subtitle_connection_error"= "Por favor, compruebe su conexión a internet.";
 
-"onboarding_title_technical_error"= "Bien, esto podría ser embarazoso.";
-"onboarding_subtitle_technical_error"= "Parece que estamos experimentando problemas técnicos. Por favor, intentelo de nuevo.";
+"onboarding_title_technical_error"= "Ha ocurrido algún error.";
+"onboarding_subtitle_technical_error"= "Por favor, inténtelo de nuevo.";
 
 
 //onboarding stages
@@ -30,11 +30,11 @@
 "onboarding_finish_succesfully"= "Enhorabuena! Has completado el proceso sactisfactoriamente.";
 "onboarding_onboarding_config_error"= "Por favor, revise su OnboardingConfig. Debe de tener seleccionada por lo menos una Onboarding Stage";
 
-"onboarding_description_stages"= "Por favor, debe de completar los siguientes pasos, esto le llevará un par de minutos";
+"onboarding_description_stages"= "Por favor, complete los siguientes pasos para un onboarding correcto!";
 "onboarding_cancel_button"= "Cancelar";
 
 "onboarding_select_document_title"="Selección documento";
-"onboarding_status_stage_title"="Onboarding";
+"onboarding_status_stage_title"="Proceso de Onboarding";
 
 
 "onboarding_stages_done_button"="HECHO";
@@ -46,8 +46,6 @@
 
 "onboarding_select_document_subtitle_issuing_country"="Seleccione el país de emisión";
 "onboarding_country_no_selected"="Por favor, seleccione el país de emisión";
-
-
 
 "onboarding_stage_canceled"="La captura ha sido cancelada.";
 
@@ -66,16 +64,17 @@
 "onboarding_manual_capture"= "Captura manual";
 "onboarding_retry"= "Reintentar";
 
-"onboarding_title_document_not_recognised"= "Estamos experimentando dificultades con la lectura automatica de documento.";
-"onboarding_subtitle_document_not_recognised"= "Puedes reintentarlo o cambiarte a captura manual.";
+"onboarding_title_document_not_recognised"= "No se ha completado la lectura del documento.";
+"onboarding_subtitle_document_not_recognised"= "Por favor, inténtelo de nuevo";
 
-"onboarding_authenticating"="Autenticando";
+"onboarding_authenticating"="Autenticando...";
 "onboarding_adding_selfie"="Añadiendo selfie...";
 
 "onboarding_label_country"="País";
 
 "onboarding_front_side"="ANVERSO";
 "onboarding_back_side"="REVERSO";
+"onboarding_info_page"="PÁGINA DE INFORMACIÓN";
 "onboarding_tap_here"="TOQUE AQUÍ";
 
 "onboarding_other_country_list" = "Otro";

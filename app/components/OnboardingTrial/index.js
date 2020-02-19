@@ -10,17 +10,7 @@ const ONBOARDING_CONFIG = {
     "stages": [
         {"stage": "addSelfie"},
         {"stage": "addDocument", "type": "idcard"},
-    ],
-    "localization": {
-        "language": "es"
-    },
-    "appearance": {
-        "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
-        "secondaryColor": {"red": 0.509, "green": 0.509, "blue": 0.509, "alpha": 1},
-        "uncheckedItemsColor": {"green": 0.47, "red": 0.47, "blue": 0.47, "alpha": 1},
-        "fontRegular": "System Thin",
-        "fontBold": "System Light"
-    }
+    ]
 }
 
 class OnboardingTrial extends Component {
