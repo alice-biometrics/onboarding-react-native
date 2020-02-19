@@ -34,7 +34,7 @@ First of all, copy the package to your project. To check the npm module, you can
 cp ~/Downloads/onboarding-react-native-{VERSION}.tgz .
 ```
 
-Install with npm:
+Install with yarn:
 
 ```console
 yarn install --save
