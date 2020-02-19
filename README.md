@@ -8,73 +8,6 @@ The main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
 
-## Usage :wave:
-
-### Configuration
-
-You can configure the onboarding flow with a simple dictionary:
-
-```js
-const ONBOARDING_CONFIG = {
-    "stages": [
-        {"stage": "addSelfie"},
-        {"stage": "addDocument", "type": "idcard"},
-    ],
-    "localization": {
-        "language": "en"
-    },
-    "appearance": {
-        "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
-        "secondaryColor": {"red": 0.509, "green": 0.509, "blue": 0.509, "alpha": 1},
-        "uncheckedItemsColor": {"green": 0.47, "red": 0.47, "blue": 0.47, "alpha": 1},
-        "fontRegular": "System Thin",
-        "fontBold": "System Light"
-    }
-}
-```
-
-### Using ALiCE Onboarding on Trial
-
-Add our React Native component in your application adding:
-
-```html
-<OnboardingWithSandbox
-  sandboxToken={sandboxToken}
-  email={email}
-  firstName={firstName}
-  lastName={lastName}
-  config={ONBOARDING_CONFIG}
-  onSuccess={(value) => console.log("onSuccess:" + value) }
-  onFailure={(value) => console.log("onFailure:" + value) }
-  onCancel={(value) => console.log("onCancel:" + value) }
-/>
-```
-
-Where `sandboxToken` is a temporal token for testing the technology in a development/testing environment. 
-
-An `email` is required to associate it to an ALiCE `user_id`.
-
-see an example [here](app/components/OnboardingTrial/index.js)
-
-### Using ALiCE Onboarding on Production
-
-Add our React Native component in your application adding:
-
-```html
-<Onboarding
-  userToken={userToken}
-  config={ONBOARDING_CONFIG}
-  onSuccess={(value) => console.log("onSuccess:" + value) }
-  onFailure={(value) => console.log("onFailure:" + value) }
-  onCancel={(value) => console.log("onCancel:" + value) }
-/>
-```
-
-Where `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend.
-
-see an example [here](app/components/OnboardingProduction/index.js)
-
-
 ## Requirements :hammer:
 
 * Package Manager: Use [yarn](https://classic.yarnpkg.com/en/docs/install/) or [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 
@@ -101,7 +34,7 @@ First of all, copy the package to your project. To check the npm module, you can
 cp ~/Downloads/onboarding-react-native-{VERSION}.tgz .
 ```
 
-Install with npm:
+Install with yarn:
 
 ```console
 yarn install --save
@@ -120,13 +53,7 @@ If this not work, please check if your version file matches with the required in
 Install dependencies with `cocoapods` is required:
 
 ```console
-yarn cocoapods
-```
-
-or 
-
-```console
-cd ios; pod install; cd ..
+yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
 
 ### Android
@@ -143,15 +70,76 @@ Your `google-services.json` should have a bundleId associate. Please, change in 
 
 ```gradle
 android {
-    ...
-
     defaultConfig {
         applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
-        ...
     }
-    
-...
 ```
+
+## Usage :wave:
+
+### Configuration
+
+You can configure the onboarding flow with a simple dictionary:
+
+```js
+const ONBOARDING_CONFIG = {
+    "stages": [
+        {"stage": "addSelfie"},
+        {"stage": "addDocument", "type": "idcard"},
+    ],
+    "localization": {
+        "language": "en"
+    },
+    "appearance": {
+        "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
+        "secondaryColor": {"red": 0.509, "green": 0.509, "blue": 0.509, "alpha": 1},
+        "uncheckedItemsColor": {"green": 0.47, "red": 0.47, "blue": 0.47, "alpha": 1},
+        "fontRegular": "System Thin",
+        "fontBold": "System Light"
+    }
+}
+```
+
+### Using ALiCE Onboarding on Production
+
+Add our React Native component in your application adding:
+
+```html
+<Onboarding
+  userToken={userToken}
+  config={ONBOARDING_CONFIG}
+  onSuccess={(value) => console.log("onSuccess:" + value) }
+  onFailure={(value) => console.log("onFailure:" + value) }
+  onCancel={(value) => console.log("onCancel:" + value) }
+/>
+```
+
+Where `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend.
+
+see an example [here](app/components/OnboardingProduction/index.js)
+
+### Using ALiCE Onboarding on Trial
+
+Add our React Native component in your application adding:
+
+```html
+<OnboardingWithSandbox
+  sandboxToken={sandboxToken}
+  email={email}
+  firstName={firstName}
+  lastName={lastName}
+  config={ONBOARDING_CONFIG}
+  onSuccess={(value) => console.log("onSuccess:" + value) }
+  onFailure={(value) => console.log("onFailure:" + value) }
+  onCancel={(value) => console.log("onCancel:" + value) }
+/>
+```
+
+Where `sandboxToken` is a temporal token for testing the technology in a development/testing environment. 
+
+An `email` is required to associate it to an ALiCE `user_id`.
+
+see an example [here](app/components/OnboardingTrial/index.js)
 
 ## Run App Example :calling:
 
