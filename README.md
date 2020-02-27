@@ -109,17 +109,7 @@ const ONBOARDING_CONFIG = {
     "stages": [
         {"stage": "addSelfie"},
         {"stage": "addDocument", "type": "idcard"},
-    ],
-    "localization": {
-        "language": "en"
-    },
-    "appearance": {
-        "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
-        "secondaryColor": {"red": 0.509, "green": 0.509, "blue": 0.509, "alpha": 1},
-        "uncheckedItemsColor": {"green": 0.47, "red": 0.47, "blue": 0.47, "alpha": 1},
-        "fontRegular": "System Thin",
-        "fontBold": "System Light"
-    }
+    ]
 }
 ```
 
@@ -264,6 +254,58 @@ dependencies {
   implementation 'com.google.firebase:firebase-analytics:17.2.0' // Add this (firebase related)
 }
 apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
+```
+
+## Customisation :gear:
+
+### Localization
+
+To improve the user experience, ALiCE Onboarding allows the customization of the theme in a very simple way. Just define
+
+* onboardingPrimary: Defines button colors and main text.
+* onboardingSecondary: Define secondary text (Helping info).
+* onboardingUncheckedItems: Define the background of unchecked icons.
+
+Modify the OnboardingConfig:
+
+```js
+const ONBOARDING_CONFIG = {
+    "stages": [
+        {"stage": "addSelfie"},
+        {"stage": "addDocument", "type": "idcard"},
+    ],
+    "appearance": {
+        "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
+        "secondaryColor": {"red": 0.509, "green": 0.509, "blue": 0.509, "alpha": 1},
+        "uncheckedItemsColor": {"green": 0.47, "red": 0.47, "blue": 0.47, "alpha": 1},
+        "fontRegular": "System Thin",
+        "fontBold": "System Light"
+    }
+}
+```
+
+
+
+### Appareance
+
+ALiCE Onboarding SDK already come with two automatic translations for the following locales:
+* English (en)
+* Spanish (es)
+
+By default, the SDK infers what is the default language to use. If locale does not exist, it uses English.
+
+In addition, you can also provide custom translations (or different texts) to clarify whatever you want in your app. For that, you need to add an additionl file inside your resource folder for required locale, the file name should be the ISO 639-1 language code.
+
+```js
+const ONBOARDING_CONFIG = {
+    "stages": [
+        {"stage": "addSelfie"},
+        {"stage": "addDocument", "type": "idcard"},
+    ],
+    "localization": {
+        "language": "en"
+    }
+}
 ```
 
 ## Documentation :page_facing_up:
