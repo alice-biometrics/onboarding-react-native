@@ -8,6 +8,23 @@ The main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
 
+## Table of Contents
+- [Requirements :hammer:](#requirements-hammer)
+- [Installation :computer:](#installation-computer)
+- [Getting Started :chart_with_upwards_trend:](#getting-started-chart_with_upwards_trend)
+  * [Import the library](#import-the-library)
+  * [Configuration](#configuration)
+  * [Run ALiCE Onboarding](#run-alice-onboarding)
+- [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)
+  * [Trial](#trial)
+  * [Production](#production)
+- [Demo :rocket:](#demo-rocket)
+  * [iOS](#ios)
+  * [Android](#android)
+- [Customisation :gear:](#customisation-gear)
+- [Documentation :page_facing_up:](#documentation-page_facing_up)
+- [Contact :mailbox_with_mail:](#contact-mailbox_with_mail)
+
 ## Requirements :hammer:
 
 * Package Manager: Use [yarn](https://classic.yarnpkg.com/en/docs/install/) or [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 
@@ -75,7 +92,13 @@ android {
     }
 ```
 
-## Usage :wave:
+## Getting Started :chart_with_upwards_trend:
+
+### Import the library
+
+```js
+import Onboarding from 'onboarding-react-native';
+```
 
 ### Configuration
 
@@ -141,7 +164,7 @@ An `email` is required to associate it to an ALiCE `user_id`.
 
 see an example [here](app/components/OnboardingTrial/index.js)
 
-## Run App Example :calling:
+## Demo :rocket:
 
 ### iOS
 
