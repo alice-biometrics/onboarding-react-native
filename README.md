@@ -258,7 +258,7 @@ apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
 
 ## Customisation :gear:
 
-### Localization
+### Appareance
 
 To improve the user experience, ALiCE Onboarding allows the customization of the theme in a very simple way. Just define
 
@@ -286,7 +286,7 @@ const ONBOARDING_CONFIG = {
 
 
 
-### Appareance
+### Localization
 
 ALiCE Onboarding SDK already come with two automatic translations for the following locales:
 * English (en)
