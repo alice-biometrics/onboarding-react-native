@@ -77,6 +77,14 @@ Consider:
 
 ### Installation Android
 
+
+allprojects {
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"   //Add this
+        }
+    }
+
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
 Copy your google-services.json file for the example application inside the android/app module.
@@ -86,6 +94,15 @@ cp ~/Downloads/google-services.json android/app/
 ```
 
 Your `google-services.json` should have an `applicationId` associated. Please, change in `android/app/build.gradle`
+
+
+### Our SDK configuration
+
+minSdkVersion = 21
+targetSdkVersion = 28
+compileSdkVersion = 28
+buildToolsVersion = "28.0.3"
+
 
 ```gradle
 android {
@@ -105,8 +122,6 @@ Consider:
 
          <uses-feature android:name="android.hardware.camera" /> <!--Add this -->
          <uses-feature android:name="android.hardware.camera.autofocus" /> <!--Add this -->
-         <!-- > ... -->
-         <activity android:name="com.rnalice.AliceActivity" /> <!--Add this -->
        </manifest>
        ```
 
@@ -115,21 +130,7 @@ Consider:
   - Check `minSdkVersion`, `kotlinVersion` and Firebase dependencies.
 
   ```gradle
-  buildscript {
-      ext {
-          buildToolsVersion = "28.0.3"
-          minSdkVersion = 21 // Modify this (at least 21)
-          compileSdkVersion = 28
-          targetSdkVersion = 28
-          kotlinVersion = '1.3.11' // Add this
-      }
-      repositories {
-          google()
-          jcenter()
-      }
       dependencies {
-          classpath("com.android.tools.build:gradle:3.4.2")
-          classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion" // Add this
           classpath 'com.google.gms:google-services:4.3.2' // Add this (firebase related)
       }
   }
@@ -138,19 +139,6 @@ Consider:
 * Modify `android/app/build.gradle` with:
 
   ```gradle
-  ...
-  android {
-    ...
-    defaultConfig {
-      ...
-      multiDexEnabled true // Add this
-    }
-    ...
-  }
-  dependencies {
-    ...
-    implementation 'com.google.firebase:firebase-analytics:17.2.0' // Add this (firebase related)
-  }
   apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
   ```
 
