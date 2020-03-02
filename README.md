@@ -81,7 +81,7 @@ Consider:
 allprojects {
     repositories {
         maven {
-            url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"   //Add this
+            url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"
         }
     }
 ```
@@ -96,21 +96,11 @@ cp ~/Downloads/google-services.json android/app/
 
 Your `google-services.json` should have an `applicationId` associated. Please, change in `android/app/build.gradle`
 
-
-### Our SDK configuration
-
-```
-minSdkVersion = 21
-targetSdkVersion = 28
-compileSdkVersion = 28
-buildToolsVersion = "28.0.3"
-```
-
 ```gradle
 android {
-    defaultConfig {
-        applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
-    }
+ defaultConfig {
+     applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
+}
 ```
 
 Consider:
@@ -119,29 +109,24 @@ Consider:
 
        ```xml
        <manifest>
-         <uses-permission android:name="android.permission.CAMERA" /> <!--Add this -->
-         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!--Add this -->
-
-         <uses-feature android:name="android.hardware.camera" /> <!--Add this -->
-         <uses-feature android:name="android.hardware.camera.autofocus" /> <!--Add this -->
+         <uses-permission android:name="android.permission.CAMERA" /> 
+         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+         <uses-feature android:name="android.hardware.camera" />
+         <uses-feature android:name="android.hardware.camera.autofocus" /> 
        </manifest>
        ```
 
 * We strongly recommended to lock app orientation to portrait.
-* Modify `android/build.gradle`.
-  - Check `minSdkVersion`, `kotlinVersion` and Firebase dependencies.
+* Add Firebase plugin required.
 
   ```gradle
-      dependencies {
-          classpath 'com.google.gms:google-services:4.3.2' // Add this (firebase related)
-      }
+  dependencies {
+      classpath 'com.google.gms:google-services:4.3.2' 
   }
   ```
 
-* Modify `android/app/build.gradle` with:
-
   ```gradle
-  apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
+  apply plugin: 'com.google.gms.google-services'
   ```
 
 ## Getting Started :chart_with_upwards_trend:
