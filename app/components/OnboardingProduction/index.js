@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, SafeAreaView, ScrollView, Alert } from 'react-native'
-import Onboarding from 'onboarding-react-native';
+import Onboarding from 'aliceonboarding-reactnative';
 
 import styles from './styles'
 

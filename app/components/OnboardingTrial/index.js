@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, SafeAreaView, ScrollView, Alert } from 'react-native'
-import { OnboardingWithSandbox } from 'onboarding-react-native';
+import { OnboardingWithSandbox } from 'aliceonboarding-reactnative';
 
 import styles from './styles'
 
