@@ -1,4 +1,7 @@
-# onboarding-react-native  ⚛️ [![doc](https://img.shields.io/badge/doc-onboarding-51CB56)](https://docs.alicebiometrics.com/onboarding/)
+# onboarding-react-native  ⚛️ 
+
+[![npm version](https://img.shields.io/npm/v/aliceonboarding-reactnative.svg?style=flat)](https://www.npmjs.com/package/aliceonboarding-reactnative)
+[![doc](https://img.shields.io/badge/doc-onboarding-51CB56)](https://docs.alicebiometrics.com/onboarding/)
 
 ALiCE Onboarding React Native component allows the automatic capture of documents and video selfie of the user in real time from the camera of your device. It also simplifies the communication with the onboarding API to facilitate rapid integration and development. It manages the onboarding flow configuration: requested documents and order.
 
@@ -7,6 +10,23 @@ The main features are:
 - Automatic capture of documents and video selfie of the user in real time from the camera of your device.
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
+
+## Table of Contents
+- [Requirements :hammer:](#requirements-hammer)
+- [Installation :computer:](#installation-computer)
+- [Getting Started :chart_with_upwards_trend:](#getting-started-chart_with_upwards_trend)
+  * [Import the library](#import-the-library)
+  * [Configuration](#configuration)
+  * [Run ALiCE Onboarding](#run-alice-onboarding)
+- [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)
+  * [Trial](#trial)
+  * [Production](#production)
+- [Demo :rocket:](#demo-rocket)
+  * [iOS](#ios)
+  * [Android](#android)
+- [Customisation :gear:](#customisation-gear)
+- [Documentation :page_facing_up:](#documentation-page_facing_up)
+- [Contact :mailbox_with_mail:](#contact-mailbox_with_mail)
 
 ## Requirements :hammer:
 
@@ -68,7 +88,13 @@ android {
     }
 ```
 
-## Usage :wave:
+## Getting Started :chart_with_upwards_trend:
+
+### Import the library
+
+```js
+import Onboarding from 'onboarding-react-native';
+```
 
 ### Configuration
 
@@ -79,17 +105,7 @@ const ONBOARDING_CONFIG = {
     "stages": [
         {"stage": "addSelfie"},
         {"stage": "addDocument", "type": "idcard"},
-    ],
-    "localization": {
-        "language": "en"
-    },
-    "appearance": {
-        "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
-        "secondaryColor": {"red": 0.509, "green": 0.509, "blue": 0.509, "alpha": 1},
-        "uncheckedItemsColor": {"green": 0.47, "red": 0.47, "blue": 0.47, "alpha": 1},
-        "fontRegular": "System Thin",
-        "fontBold": "System Light"
-    }
+    ]
 }
 ```
 
@@ -134,7 +150,7 @@ An `email` is required to associate it to an ALiCE `user_id`.
 
 see an example [here](app/components/OnboardingTrial/index.js)
 
-## Run App Example :calling:
+## Demo :rocket:
 
 ### iOS
 
@@ -234,6 +250,58 @@ dependencies {
   implementation 'com.google.firebase:firebase-analytics:17.2.0' // Add this (firebase related)
 }
 apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
+```
+
+## Customisation :gear:
+
+### Appareance
+
+To improve the user experience, ALiCE Onboarding allows the customization of the theme in a very simple way. Just define
+
+* onboardingPrimary: Defines button colors and main text.
+* onboardingSecondary: Define secondary text (Helping info).
+* onboardingUncheckedItems: Define the background of unchecked icons.
+
+Modify the OnboardingConfig:
+
+```js
+const ONBOARDING_CONFIG = {
+    "stages": [
+        {"stage": "addSelfie"},
+        {"stage": "addDocument", "type": "idcard"},
+    ],
+    "appearance": {
+        "primaryColor": {"blue": 0.478, "alpha": 1, "green": 0.121, "red": 0.129},
+        "secondaryColor": {"red": 0.509, "green": 0.509, "blue": 0.509, "alpha": 1},
+        "uncheckedItemsColor": {"green": 0.47, "red": 0.47, "blue": 0.47, "alpha": 1},
+        "fontRegular": "System Thin",
+        "fontBold": "System Light"
+    }
+}
+```
+
+
+
+### Localization
+
+ALiCE Onboarding SDK already come with two automatic translations for the following locales:
+* English (en)
+* Spanish (es)
+
+By default, the SDK infers what is the default language to use. If locale does not exist, it uses English.
+
+In addition, you can also provide custom translations (or different texts) to clarify whatever you want in your app. For that, you need to add an additionl file inside your resource folder for required locale, the file name should be the ISO 639-1 language code.
+
+```js
+const ONBOARDING_CONFIG = {
+    "stages": [
+        {"stage": "addSelfie"},
+        {"stage": "addDocument", "type": "idcard"},
+    ],
+    "localization": {
+        "language": "en"
+    }
+}
 ```
 
 ## Documentation :page_facing_up:
