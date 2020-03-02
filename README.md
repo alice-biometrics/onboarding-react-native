@@ -134,13 +134,6 @@ Consider:
       }
   }
   ```
-* Modify `android/settings.gradle` with:
-
-  ```gradle
-  include ':onboarding' // Add this
-  project(':onboarding').projectDir = new File(rootProject.projectDir,'../node_modules/onboarding-react-native/android/onboarding') // Add this
-  apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
-  ```
 
 * Modify `android/app/build.gradle` with:
 
