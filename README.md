@@ -111,7 +111,7 @@ const ONBOARDING_CONFIG = {
 }
 ```
 
-### Using ALiCE Onboarding on Production
+### Run ALiCE Onboarding
 
 Add our React Native component in your application adding:
 
@@ -129,7 +129,22 @@ Where `userToken` is used to secure requests made by the users on their mobile d
 
 see an example [here](app/components/OnboardingProduction/index.js)
 
-### Using ALiCE Onboarding on Trial
+## Authentication :closed_lock_with_key:
+
+How can we get the `userToken` to start testing ALiCE Onboarding technology?
+
+`AliceOnboarding` can be used with two differnet authentication modes:
+
+* Trial (Using ALiCE Onboarding Sandbox): Recommended only in the early stages of integration.
+    - Pros: This mode does not need backend integration.
+    - Cons: Security.
+* Production (Using your Backend): In a production deployment we strongly recommend to use your backend to obtain required TOKENS.
+    - Pros: Security. Only your backend is able to do critical operations.
+    - Cons: Needs some integration in your backend.
+
+### Trial
+
+If you want to test the technology without integrate it with your backend, you can use our Sandbox Service. This service associates a user mail with the ALiCE Onboarding `user_id`. You can create a user and obtain his `USER_TOKEN` already linked with the email.
 
 Add our React Native component in your application adding:
 
@@ -145,12 +160,27 @@ Add our React Native component in your application adding:
   onCancel={(value) => console.log("onCancel:" + value) }
 />
 ```
+Where `sandboxToken` is a temporary token for testing the technology in a development/testing environment. 
 
-Where `sandboxToken` is a temporal token for testing the technology in a development/testing environment. 
-
-An `email` is required to associate it to an ALiCE `user_id`.
+An `email` is required to associate it to an ALiCE Onboarding `user_id`. You can also add some additional information from your user as `firstName` and `lastName`.
 
 see an example [here](app/components/OnboardingTrial/index.js)
+
+For more information about the Sandbox, please check the following [doc](https://docs.alicebiometrics.com/onboarding/access.html#using-alice-onboarding-sandbox).
+
+### Production
+
+On the other hand, for production environments we strongly recommend to use your backend to obtain the required `USER_TOKEN`.
+
+```html
+<Onboarding
+  userToken={this.getUserTokenFromMyBackend()}
+  config={ONBOARDING_CONFIG}
+  onSuccess={(value) => console.log("onSuccess:" + value) }
+  onFailure={(value) => console.log("onFailure:" + value) }
+  onCancel={(value) => console.log("onCancel:" + value) }
+/>
+```
 
 ## Demo :rocket:
 
