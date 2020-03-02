@@ -14,6 +14,8 @@ The main features are:
 ## Table of Contents
 - [Requirements :hammer:](#requirements-hammer)
 - [Installation :computer:](#installation-computer)
+  * [Installation iOS](#installation-ios)
+  * [Installation Android](#installation-android)
 - [Getting Started :chart_with_upwards_trend:](#getting-started-chart_with_upwards_trend)
   * [Import the library](#import-the-library)
   * [Configuration](#configuration)
@@ -22,8 +24,8 @@ The main features are:
   * [Trial](#trial)
   * [Production](#production)
 - [Demo :rocket:](#demo-rocket)
-  * [iOS](#ios)
-  * [Android](#android)
+  * [Demo iOS](#demo-ios)
+  * [Demo Android](#demo-android)
 - [Customisation :gear:](#customisation-gear)
 - [Documentation :page_facing_up:](#documentation-page_facing_up)
 - [Contact :mailbox_with_mail:](#contact-mailbox_with_mail)
@@ -51,8 +53,8 @@ or just add the following code to your package.json
 
 ```json
 "aliceonboarding-reactnative": "{VERSION}",
-                                   ^
-                                   |_____ Set the version
+                                    ^
+                                    |_____ Set the version
 ```
 
 Then, install it as usual:
@@ -61,7 +63,7 @@ Then, install it as usual:
 yarn install
 ```
 
-### iOS
+### Installation iOS
 
 Install dependencies with `cocoapods` is required:
 
@@ -69,7 +71,7 @@ Install dependencies with `cocoapods` is required:
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
 
-### Android
+### Installation Android
 
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
@@ -79,7 +81,7 @@ Copy your google-services.json file for the example application inside the andro
 cp ~/Downloads/google-services.json android/app/
 ```
 
-Your `google-services.json` should have a bundleId associate. Please, change in `android/app/build.gradle`
+Your `google-services.json` should have an `applicationId` associated. Please, change in `android/app/build.gradle`
 
 ```gradle
 android {
@@ -93,7 +95,7 @@ android {
 ### Import the library
 
 ```js
-import Onboarding from 'onboarding-react-native';
+import Onboarding from 'aliceonboarding-reactnative';
 ```
 
 ### Configuration
@@ -152,7 +154,7 @@ see an example [here](app/components/OnboardingTrial/index.js)
 
 ## Demo :rocket:
 
-### iOS
+### Demo iOS
 
 ```console
 react-native run-ios
@@ -164,7 +166,7 @@ Or just open the XCode workspace and run it manually:
 open ios/example.xcworkspace/
 ```
 
-### Android
+### Demo Android
 
 ```console
 react-native run-android
