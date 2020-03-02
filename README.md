@@ -77,6 +77,15 @@ Consider:
 
 ### Installation Android
 
+```gradle
+allprojects {
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"
+        }
+    }
+```
+
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
 Copy your google-services.json file for the example application inside the android/app module.
@@ -89,9 +98,9 @@ Your `google-services.json` should have an `applicationId` associated. Please, c
 
 ```gradle
 android {
-    defaultConfig {
-        applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
-    }
+ defaultConfig {
+     applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
+}
 ```
 
 Consider:
@@ -100,58 +109,24 @@ Consider:
 
        ```xml
        <manifest>
-         <uses-permission android:name="android.permission.CAMERA" /> <!--Add this -->
-         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!--Add this -->
-
-         <uses-feature android:name="android.hardware.camera" /> <!--Add this -->
-         <uses-feature android:name="android.hardware.camera.autofocus" /> <!--Add this -->
-         <!-- > ... -->
-         <activity android:name="com.rnalice.AliceActivity" /> <!--Add this -->
+         <uses-permission android:name="android.permission.CAMERA" /> 
+         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+         <uses-feature android:name="android.hardware.camera" />
+         <uses-feature android:name="android.hardware.camera.autofocus" /> 
        </manifest>
        ```
 
 * We strongly recommended to lock app orientation to portrait.
-* Modify `android/build.gradle`.
-  - Check `minSdkVersion`, `kotlinVersion` and Firebase dependencies.
+* Add Firebase plugin required.
 
   ```gradle
-  buildscript {
-      ext {
-          buildToolsVersion = "28.0.3"
-          minSdkVersion = 21 // Modify this (at least 21)
-          compileSdkVersion = 28
-          targetSdkVersion = 28
-          kotlinVersion = '1.3.11' // Add this
-      }
-      repositories {
-          google()
-          jcenter()
-      }
-      dependencies {
-          classpath("com.android.tools.build:gradle:3.4.2")
-          classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion" // Add this
-          classpath 'com.google.gms:google-services:4.3.2' // Add this (firebase related)
-      }
+  dependencies {
+      classpath 'com.google.gms:google-services:4.3.2' 
   }
   ```
 
-* Modify `android/app/build.gradle` with:
-
   ```gradle
-  ...
-  android {
-    ...
-    defaultConfig {
-      ...
-      multiDexEnabled true // Add this
-    }
-    ...
-  }
-  dependencies {
-    ...
-    implementation 'com.google.firebase:firebase-analytics:17.2.0' // Add this (firebase related)
-  }
-  apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
+  apply plugin: 'com.google.gms.google-services'
   ```
 
 ## Getting Started :chart_with_upwards_trend:
