@@ -14,6 +14,8 @@ The main features are:
 ## Table of Contents
 - [Requirements :hammer:](#requirements-hammer)
 - [Installation :computer:](#installation-computer)
+  * [Installation iOS](#installation-ios)
+  * [Installation Android](#installation-android)
 - [Getting Started :chart_with_upwards_trend:](#getting-started-chart_with_upwards_trend)
   * [Import the library](#import-the-library)
   * [Configuration](#configuration)
@@ -22,8 +24,8 @@ The main features are:
   * [Trial](#trial)
   * [Production](#production)
 - [Demo :rocket:](#demo-rocket)
-  * [iOS](#ios)
-  * [Android](#android)
+  * [Demo iOS](#demo-ios)
+  * [Demo Android](#demo-android)
 - [Customisation :gear:](#customisation-gear)
 - [Documentation :page_facing_up:](#documentation-page_facing_up)
 - [Contact :mailbox_with_mail:](#contact-mailbox_with_mail)
@@ -41,34 +43,27 @@ The main features are:
 
 ## Installation :computer:
 
-We provide a npm module (`onboarding-react-native-{VERSION}.tgz`) with a react-native component. Native frameworks (Android and iOS) are included in the package.
-
-**How do I get the package?**
-
-* Contact us through the following mail: support@alicebiometrics.com 📬
-* Through public registry (coming soon 🚧)
-
-First of all, copy the package to your project. To check the npm module, you can use this app:
+Add the ALiCE Onboarding React Native Component:
 
 ```console
-cp ~/Downloads/onboarding-react-native-{VERSION}.tgz .
+yarn add aliceonboarding-reactnative
 ```
 
-Install with yarn:
-
-```console
-yarn install --save
-```
-
-If this not work, please check if your version file matches with the required in the [package.json](package.json)
+or just add the following code to your package.json
 
 ```json
-"onboarding-react-native": "file:onboarding-react-native-{VERSION}.tgz",
-                                                             ^
-                                                             |_____ Check this version
+"aliceonboarding-reactnative": "{VERSION}",
+                                    ^
+                                    |_____ Set the version
 ```
 
-### iOS
+Then, install it as usual:
+
+```console
+yarn install
+```
+
+### Installation iOS
 
 Install dependencies with `cocoapods` is required:
 
@@ -76,7 +71,20 @@ Install dependencies with `cocoapods` is required:
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
 
-### Android
+Consider: 
+* Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
+* We strongly recommended to lock app orientation to portrait.
+
+### Installation Android
+
+```gradle
+allprojects {
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"
+        }
+    }
+```
 
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
@@ -86,21 +94,47 @@ Copy your google-services.json file for the example application inside the andro
 cp ~/Downloads/google-services.json android/app/
 ```
 
-Your `google-services.json` should have a bundleId associate. Please, change in `android/app/build.gradle`
+Your `google-services.json` should have an `applicationId` associated. Please, change in `android/app/build.gradle`
 
 ```gradle
 android {
-    defaultConfig {
-        applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
-    }
+ defaultConfig {
+     applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
+}
 ```
+
+Consider:
+* Add camera permisions to your app, and Add AliceActivity.
+   - Modify `android/app/src/main/AndroidManifest.xml` this:
+
+       ```xml
+       <manifest>
+         <uses-permission android:name="android.permission.CAMERA" /> 
+         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+         <uses-feature android:name="android.hardware.camera" />
+         <uses-feature android:name="android.hardware.camera.autofocus" /> 
+       </manifest>
+       ```
+
+* We strongly recommended to lock app orientation to portrait.
+* Add Firebase plugin required.
+
+  ```gradle
+  dependencies {
+      classpath 'com.google.gms:google-services:4.3.2' 
+  }
+  ```
+
+  ```gradle
+  apply plugin: 'com.google.gms.google-services'
+  ```
 
 ## Getting Started :chart_with_upwards_trend:
 
 ### Import the library
 
 ```js
-import Onboarding from 'onboarding-react-native';
+import Onboarding from 'aliceonboarding-reactnative';
 ```
 
 ### Configuration
@@ -116,7 +150,7 @@ const ONBOARDING_CONFIG = {
 }
 ```
 
-### Using ALiCE Onboarding on Production
+### Run ALiCE Onboarding
 
 Add our React Native component in your application adding:
 
@@ -130,11 +164,26 @@ Add our React Native component in your application adding:
 />
 ```
 
-Where `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend.
+Where `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend (see [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)).
 
 see an example [here](app/components/OnboardingProduction/index.js)
 
-### Using ALiCE Onboarding on Trial
+## Authentication :closed_lock_with_key:
+
+How can we get the `userToken` to start testing ALiCE Onboarding technology?
+
+`AliceOnboarding` can be used with two differnet authentication modes:
+
+* Trial (Using ALiCE Onboarding Sandbox): Recommended only in the early stages of integration.
+    - Pros: This mode does not need backend integration.
+    - Cons: Security compromises. It must be used only for develpment and testing.
+* Production (Using your Backend): In a production deployment we strongly recommend to use your backend to obtain required TOKENS.
+    - Pros: Full security level. Only your backend is able to do critical operations.
+    - Cons: Needs some integration in your backend.
+
+### Trial
+
+If you want to test the technology without integrate it with your backend, you can use our Sandbox Service. This service associates a user mail with the ALiCE Onboarding `user_id`. You can create a user and obtain his `USER_TOKEN` already linked with the email.
 
 Add our React Native component in your application adding:
 
@@ -150,16 +199,31 @@ Add our React Native component in your application adding:
   onCancel={(value) => console.log("onCancel:" + value) }
 />
 ```
+Where `sandboxToken` is a temporary token for testing the technology in a development/testing environment. 
 
-Where `sandboxToken` is a temporal token for testing the technology in a development/testing environment. 
-
-An `email` is required to associate it to an ALiCE `user_id`.
+An `email` is required to associate it to an ALiCE Onboarding `user_id`. You can also add some additional information from your user as `firstName` and `lastName`.
 
 see an example [here](app/components/OnboardingTrial/index.js)
 
+For more information about the Sandbox, please check the following [doc](https://docs.alicebiometrics.com/onboarding/access.html#using-alice-onboarding-sandbox).
+
+### Production
+
+On the other hand, for production environments we strongly recommend to use your backend to obtain the required `USER_TOKEN`.
+
+```html
+<Onboarding
+  userToken={this.getUserTokenFromMyBackend()}
+  config={ONBOARDING_CONFIG}
+  onSuccess={(value) => console.log("onSuccess:" + value) }
+  onFailure={(value) => console.log("onFailure:" + value) }
+  onCancel={(value) => console.log("onCancel:" + value) }
+/>
+```
+
 ## Demo :rocket:
 
-### iOS
+### Demo iOS
 
 ```console
 react-native run-ios
@@ -171,7 +235,7 @@ Or just open the XCode workspace and run it manually:
 open ios/example.xcworkspace/
 ```
 
-### Android
+### Demo Android
 
 ```console
 react-native run-android
@@ -179,85 +243,6 @@ react-native run-android
 
 Or just open the Android Studio workspace and run it manually.
 
-
-## Use ALiCE Onboarding in your React Native App :ok_hand:
-
-### Add onboarding-react-native to your iOS project
-
-* Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
-* We strongly recommended to lock the orientation to portrait.
-
-
-### Add onboarding-react-native to your Android project
-
-
-1. Add camera permisions to your app, and Add AliceActivity.
-      - Modify `android/app/src/main/AndroidManifest.xml` this:
-
-```xml
-  <manifest>
-    <uses-permission android:name="android.permission.CAMERA" /> <!--Add this -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!--Add this -->
-
-    <uses-feature android:name="android.hardware.camera" /> <!--Add this -->
-    <uses-feature android:name="android.hardware.camera.autofocus" /> <!--Add this -->
-    <!-- > ... -->
-    <activity android:name="com.rnalice.AliceActivity" /> <!--Add this -->
-  </manifest>
-```
-
-2. We strongly recommended to lock the orientation to portrait.
-
-
-3. Modify `android/build.gradle` with:
-
-```gradle
-buildscript {
-    ext {
-        buildToolsVersion = "28.0.3"
-        minSdkVersion = 21 // Modify this (at least 21)
-        compileSdkVersion = 28
-        targetSdkVersion = 28
-        kotlinVersion = '1.3.11' // Add this
-    }
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:3.4.2")
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion" // Add this
-        classpath 'com.google.gms:google-services:4.3.2' // Add this (firebase related)
-    }
-}
-```
-
-4. Modify `android/settings.gradle` with:
-
-```gradle
-include ':onboarding' // Add this
-project(':onboarding').projectDir = new File(rootProject.projectDir,'../node_modules/onboarding-react-native/android/onboarding') // Add this
-apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
-```
-
-5. Modify `android/app/build.gradle` with:
-
-```gradle
-...
-android {
-  ...
-  defaultConfig {
-    ...
-    multiDexEnabled true // Add this
-  }
-  ...
-}
-dependencies {
-  ...
-  implementation 'com.google.firebase:firebase-analytics:17.2.0' // Add this (firebase related)
-}
-apply plugin: 'com.google.gms.google-services' // Add this (firebase related)
-```
 
 ## Customisation :gear:
 
