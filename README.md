@@ -77,13 +77,14 @@ Consider:
 
 ### Installation Android
 
-
+```gradle
 allprojects {
     repositories {
         maven {
             url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"   //Add this
         }
     }
+```
 
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
@@ -98,11 +99,12 @@ Your `google-services.json` should have an `applicationId` associated. Please, c
 
 ### Our SDK configuration
 
+```
 minSdkVersion = 21
 targetSdkVersion = 28
 compileSdkVersion = 28
 buildToolsVersion = "28.0.3"
-
+```
 
 ```gradle
 android {
