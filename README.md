@@ -21,31 +21,24 @@ The main features are:
 
 ## Installation :computer:
 
-We provide a npm module (`onboarding-react-native-{VERSION}.tgz`) with a react-native component. Native frameworks (Android and iOS) are included in the package.
-
-**How do I get the package?**
-
-* Contact us through the following mail: support@alicebiometrics.com 📬
-* Through public registry (coming soon 🚧)
-
-First of all, copy the package to your project. To check the npm module, you can use this app:
+Add the ALiCE Onboarding React Native Component:
 
 ```console
-cp ~/Downloads/onboarding-react-native-{VERSION}.tgz .
+yarn add aliceonboarding-reactnative
 ```
 
-Install with yarn:
-
-```console
-yarn install --save
-```
-
-If this not work, please check if your version file matches with the required in the [package.json](package.json)
+or just add the following code to your package.json
 
 ```json
-"onboarding-react-native": "file:onboarding-react-native-{VERSION}.tgz",
-                                                             ^
-                                                             |_____ Check this version
+"aliceonboarding-reactnative": "{VERSION}",
+                                   ^
+                                   |_____ Set the version
+```
+
+Then, install it as usual:
+
+```console
+yarn install
 ```
 
 ### iOS
