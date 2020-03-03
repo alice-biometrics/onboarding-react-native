@@ -11,6 +11,7 @@ The main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
 
+
 ## Table of Contents
 - [Requirements :hammer:](#requirements-hammer)
 - [Installation :computer:](#installation-computer)
