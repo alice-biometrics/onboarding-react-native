@@ -8,7 +8,7 @@
         "start": "react-native start",
         "test": "jest",
         "lint": "eslint .",
-        "cocoapods": "cd ios; pod install; cd ..",
+        "cocoapods": "cd ios; pod install --repo-update; cd ..",
         "cleancocoapods": "cd ios; rm Podfile.lock; pod deintegrate; cd .."
     },
     "dependencies": {

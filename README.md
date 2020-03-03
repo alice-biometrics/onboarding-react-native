@@ -75,6 +75,12 @@ yarn cocoapods # equivalent to cd ios; pod install; cd ..
 Consider: 
 * Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
 * We strongly recommended to lock app orientation to portrait.
+* Update AppOnboardingSample/ios/Podfile in order to fit iOS minimum deployment target. Additionaly, add use_frameworks! to your Podfile.
+
+  ```
+  use_frameworks!
+  platform :ios, '11.0'
+  ``
 
 ### Installation Android
 
@@ -227,7 +233,7 @@ On the other hand, for production environments we strongly recommend to use your
 ### Demo iOS
 
 ```console
-npx react-native run-ios
+yarn ios # or npx react-native run-ios
 ```
 
 Or just open the XCode workspace and run it manually:
@@ -244,6 +250,14 @@ npx react-native run-android
 
 Or just open the Android Studio workspace and run it manually.
 
+
+**React Native Server**
+
+Plase note that a react-native server running is required for both platforms. Run it manually with:
+
+```console
+yarn start # react-native start
+```
 
 ## Customisation :gear:
 
