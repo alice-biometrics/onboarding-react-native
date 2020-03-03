@@ -78,7 +78,6 @@ Consider:
 * Update AppOnboardingSample/ios/Podfile in order to fit iOS minimum deployment target. Additionaly, add use_frameworks! to your Podfile.
 
   ```
-  use_frameworks!
   platform :ios, '11.0'
   ``
 
