@@ -5,7 +5,7 @@ PODS:
     - Result (~> 5.0)
     - SwiftyJSON
     - Yams
-  - aliceonboarding-reactnative (1.4.8):
+  - aliceonboarding-reactnative (1.4.9):
     - AliceOnboarding (~> 1.3.2)
     - React
   - boost-for-react-native (1.63.0)
@@ -348,7 +348,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AliceOnboarding: ce19ca82d5c481c7f4c9d487ecbc9689c02c662f
-  aliceonboarding-reactnative: 66ee5e309df61e2a3e7c30849dced81d18bfce65
+  aliceonboarding-reactnative: fa03cc7059ed4cb83d2b02096801fc225107cf7f
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: aaeaf388755e4f29cd74acbc9e3b8da6d807c37f
