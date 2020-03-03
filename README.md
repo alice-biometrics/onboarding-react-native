@@ -11,6 +11,7 @@ The main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Manage the onboarding flow configuration: requested documents and order.
 
+
 ## Table of Contents
 - [Requirements :hammer:](#requirements-hammer)
 - [Installation :computer:](#installation-computer)
@@ -226,7 +227,7 @@ On the other hand, for production environments we strongly recommend to use your
 ### Demo iOS
 
 ```console
-react-native run-ios
+npx react-native run-ios
 ```
 
 Or just open the XCode workspace and run it manually:
@@ -238,7 +239,7 @@ open ios/example.xcworkspace/
 ### Demo Android
 
 ```console
-react-native run-android
+npx react-native run-android
 ```
 
 Or just open the Android Studio workspace and run it manually.
