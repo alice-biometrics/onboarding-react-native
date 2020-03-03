@@ -243,7 +243,7 @@ yarn ios # or npx react-native run-ios
 Or just open the XCode workspace and run it manually:
 
 ```console
-open ios/example.xcworkspace/
+open ios/AppOnboardingSample.xcworkspace/
 ```
 
 ### Demo Android
