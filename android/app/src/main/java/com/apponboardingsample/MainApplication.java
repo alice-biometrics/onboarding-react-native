@@ -1,4 +1,4 @@
-package com.example;
+package com.apponboardingsample;
 
 import android.app.Application;
 import android.content.Context;
