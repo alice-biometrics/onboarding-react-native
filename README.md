@@ -15,18 +15,18 @@ The main features are:
 ## Table of Contents
 - [Requirements :hammer:](#requirements-hammer)
 - [Installation :computer:](#installation-computer)
-  * [Installation iOS](#installation-ios)
-  * [Installation Android](#installation-android)
-- [Getting Started :chart_with_upwards_trend:](#getting-started-chart_with_upwards_trend)
+  * [iOS](#installation-ios)
+  * [Android](#installation-android)
+- [Demos :rocket:](#demo-rocket)
+  * [Demo iOS](#demo-ios)
+  * [Demo Android](#demo-android)
+- [Integration :chart_with_upwards_trend:](#integration-chart_with_upwards_trend)
   * [Import the library](#import-the-library)
   * [Configuration](#configuration)
   * [Run ALiCE Onboarding](#run-alice-onboarding)
 - [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)
   * [Trial](#trial)
   * [Production](#production)
-- [Demo :rocket:](#demo-rocket)
-  * [Demo iOS](#demo-ios)
-  * [Demo Android](#demo-android)
 - [Customisation :gear:](#customisation-gear)
 - [Documentation :page_facing_up:](#documentation-page_facing_up)
 - [Contact :mailbox_with_mail:](#contact-mailbox_with_mail)
@@ -64,7 +64,7 @@ Then, install it as usual:
 yarn install
 ```
 
-### Installation iOS
+### iOS
 
 Install dependencies with `cocoapods` is required:
 
@@ -72,26 +72,7 @@ Install dependencies with `cocoapods` is required:
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
 
-Consider: 
-* Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
-* We strongly recommended to lock app orientation to portrait.
-* Update AppOnboardingSample/ios/Podfile in order to fit iOS minimum deployment target. Additionaly, add use_frameworks! to your Podfile.
-
-  ```
-  use_frameworks!
-  platform :ios, '11.0'
-  ``
-
-### Installation Android
-
-```gradle
-allprojects {
-    repositories {
-        maven {
-            url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"
-        }
-    }
-```
+### Android
 
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
@@ -110,7 +91,68 @@ android {
 }
 ```
 
+
+## Demos :rocket:
+
+We recommend you to start by testing the demos. 
+
+### Demo iOS
+
+```console
+yarn ios # or npx react-native run-ios
+```
+
+Or just open the XCode workspace and run it manually:
+
+```console
+open ios/AppOnboardingSample.xcworkspace/
+```
+
+### Demo Android
+
+```console
+npx react-native run-android
+```
+
+Or just open the Android Studio workspace and run it manually.
+
+
+**React Native Server**
+
+Plase note that a react-native server running is required for both platforms. Run it manually with:
+
+```console
+yarn start # react-native start
+```
+
+## Integration :chart_with_upwards_trend:
+
+### Setup for iOS
+
+Consider: 
+* Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
+* We strongly recommended to lock app orientation to portrait.
+* Update AppOnboardingSample/ios/Podfile in order to fit iOS minimum deployment target. Additionaly, add use_frameworks! to your Podfile.
+
+  ```
+  use_frameworks!
+  platform :ios, '11.0'
+  ```
+
+### Setup for Android
+
+```gradle
+allprojects {
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/alice-biometrics/alicebiometrics"
+        }
+    }
+```
+
 Consider:
+
+* Please remember to add to the project a valid Firebase Credentials (see [Android installation](#installation-android)).
 * Add camera permisions to your app, and Add AliceActivity.
    - Modify `android/app/src/main/AndroidManifest.xml` this:
 
@@ -140,7 +182,6 @@ Consider:
   apply plugin: 'com.google.gms.google-services'
   ```
 
-## Getting Started :chart_with_upwards_trend:
 
 ### Import the library
 
@@ -230,37 +271,6 @@ On the other hand, for production environments we strongly recommend to use your
   onFailure={(value) => console.log("onFailure:" + value) }
   onCancel={(value) => console.log("onCancel:" + value) }
 />
-```
-
-## Demo :rocket:
-
-### Demo iOS
-
-```console
-yarn ios # or npx react-native run-ios
-```
-
-Or just open the XCode workspace and run it manually:
-
-```console
-open ios/AppOnboardingSample.xcworkspace/
-```
-
-### Demo Android
-
-```console
-npx react-native run-android
-```
-
-Or just open the Android Studio workspace and run it manually.
-
-
-**React Native Server**
-
-Plase note that a react-native server running is required for both platforms. Run it manually with:
-
-```console
-yarn start # react-native start
 ```
 
 ## Customisation :gear:
