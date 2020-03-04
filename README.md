@@ -15,8 +15,8 @@ The main features are:
 ## Table of Contents
 - [Requirements :hammer:](#requirements-hammer)
 - [Installation :computer:](#installation-computer)
-  * [iOS](#installation-ios)
-  * [Android](#installation-android)
+  * [iOS](#ios)
+  * [Android](#android)
 - [Demos :rocket:](#demo-rocket)
   * [Demo iOS](#demo-ios)
   * [Demo Android](#demo-android)
@@ -152,7 +152,7 @@ allprojects {
 
 Consider:
 
-* Please remember to add to the project a valid Firebase Credentials (see [Android installation](#installation-android)).
+* Please remember to add to the project a valid Firebase Credentials (see [Android installation](#android)).
 * Add camera permisions to your app, and Add AliceActivity.
    - Modify `android/app/src/main/AndroidManifest.xml` this:
 
