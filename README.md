@@ -203,7 +203,7 @@ const ONBOARDING_CONFIG = {
 }
 ```
 
-If you do not specify the `issuingCountry`, user can select it with a menu.
+You can also specify the `issuingCountry`, otherwise user can select it with a menu.
 
 ```js
 const ONBOARDING_CONFIG = {
