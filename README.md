@@ -203,6 +203,19 @@ const ONBOARDING_CONFIG = {
 }
 ```
 
+If you do not specify the `issuingCountry`, user can select it with a menu.
+
+```js
+const ONBOARDING_CONFIG = {
+    "stages": [
+        {"stage": "addSelfie"},
+        {"stage": "addDocument", "type": "idcard", "issuingCountry": "ESP"},
+    ]
+}
+```
+
+Please note that the `passport` type does not require specification of `issuingCountry`.
+
 ### Run ALiCE Onboarding
 
 Add our React Native component in your application adding:
