@@ -1,6 +1,6 @@
 {
     "name": "example",
-    "version": "1.4.11",
+    "version": "1.4.12",
     "private": true,
     "scripts": {
         "android": "react-native run-android",
@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "@react-native-community/masked-view": "^0.1.6",
-        "aliceonboarding-reactnative": "^1.4.11",
+        "aliceonboarding-reactnative": "^1.4.12",
         "react": "16.9.0",
         "react-native": "0.61.5",
         "react-native-gesture-handler": "^1.5.3",
