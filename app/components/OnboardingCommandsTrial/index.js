@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import { View, SafeAreaView, ScrollView, Alert } from 'react-native'
-import { OnboardingWithSandbox } from 'aliceonboarding-reactnative';
+import { GetUserTokenWithSandbox } from 'aliceonboarding-reactnative';
 
 import styles from './styles'
 
 
 
-const ONBOARDING_CONFIG = {
-    "stages": [
-        {"stage": "addSelfie"}
-    ]
-}
-class OnboardingTrial extends Component {
+class OnboardingCommandsTrial extends Component {
 
 	constructor(props) {
 	  super(props)
@@ -19,8 +14,10 @@ class OnboardingTrial extends Component {
 	}
 
 	backToPrevious(title, value) {
-		this.props.navigation.navigate('InputTrial')
-		Alert.alert(title, value)
+		this.props.navigation.navigate('OnboardingCommandsView', {
+			userToken: value,
+		})
+
 	}
 
 	render() {
@@ -36,12 +33,11 @@ class OnboardingTrial extends Component {
 			        <ScrollView
 			          contentInsetAdjustmentBehavior="automatic"
 			          style={styles.scrollView}>
-			          <OnboardingWithSandbox
+			          <GetUserTokenWithSandbox
 			            sandboxToken={sandboxToken}
 			            email={email}
 			            firstName={firstName}
 			            lastName={lastName}
-			            config={ONBOARDING_CONFIG}
 			            onSuccess={(value) => this.backToPrevious("onSuccess", value) }
 			            onFailure={(value) => this.backToPrevious("onFailure", value) }
 			            onCancel={(value) => this.backToPrevious("onCancel", value) }
@@ -58,4 +54,4 @@ class OnboardingTrial extends Component {
 	}
 }
 
-export default OnboardingTrial
+export default OnboardingCommandsTrial

@@ -6,6 +6,9 @@ import InputTrial from './app/components/InputTrial';
 import OnboardingTrial from './app/components/OnboardingTrial';
 import InputProduction from './app/components/InputProduction';
 import OnboardingProduction from './app/components/OnboardingProduction';
+import OnboardingCommandsTrial from './app/components/OnboardingCommandsTrial';
+import OnboardingCommandsView from './app/components/OnboardingCommandsView';
+
 
 const RootStack = createStackNavigator(
 	{
@@ -13,7 +16,9 @@ const RootStack = createStackNavigator(
 	  InputTrial: InputTrial,
 	  InputProduction: InputProduction,
 	  OnboardingTrial: OnboardingTrial,
-	  OnboardingProduction: OnboardingProduction 
+	  OnboardingProduction: OnboardingProduction,
+	  OnboardingCommandsTrial: OnboardingCommandsTrial,
+	  OnboardingCommandsView: OnboardingCommandsView
 	}
 )
 

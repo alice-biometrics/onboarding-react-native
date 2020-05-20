@@ -18,8 +18,7 @@ class Home extends Component {
 	}
 
 	showInputScreen(screenId) {
-		console.log(screenId)
-		this.props.navigation.navigate(screenId)
+		this.props.navigation.navigate('InputTrial')
 	}
 
 	render() {

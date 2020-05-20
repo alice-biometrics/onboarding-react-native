@@ -38,6 +38,29 @@ class InputTrial extends Component {
 
 	}
 
+	aliceOnboardingCommands() {
+		const {sandboxToken, email, firstName, lastName} = this.state
+
+		if (sandboxToken == "") {
+			Alert.alert("Error", "Please, type your SANDBOX TOKEN to test the Onboarding")
+			return
+		}
+		if (email == "") {
+			Alert.alert("Error","Please, type a email to test the Onboarding")
+			return 
+		}
+
+		this.props.navigation.navigate('OnboardingCommandsTrial', {
+			sandboxToken: this.state.sandboxToken,
+			email: this.state.email,
+			firstName: this.state.firstName,
+			lastName: this.state.lastName
+		})
+
+	}
+
+
+
 	render() {
 		const {heading, input, parent} = styles
 		return (
@@ -67,6 +90,8 @@ class InputTrial extends Component {
 					onChangeText={ text => this.setState({lastName: text}) }
 				/>
 				<Button title={"Test"} onPress={_ => this.aliceOnboarding()}/>
+				<Button title={"Test commands"} onPress={_ => this.aliceOnboardingCommands()}/>
+
 			</View>
 		)
 	}
