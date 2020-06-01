@@ -28,6 +28,7 @@ The main features are:
 - [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)
   * [Trial](#trial)
   * [Production](#production)
+- [Onboarding Commands :wrench:](#onboarding-commands-wrench)
 - [Customisation :gear:](#customisation-gear)
 - [Documentation :page_facing_up:](#documentation-page_facing_up)
 - [Contact :mailbox_with_mail:](#contact-mailbox_with_mail)
@@ -287,7 +288,7 @@ On the other hand, for production environments we strongly recommend to use your
 />
 ```
 
-## Onboarding Commands
+## Onboarding Commands :wrench:
 
 ALiCE Onboarding Client SDK can be used in two different ways, by commands (OnboardingCommands) or by full flow (Onboarding).
 The commands allow you to open the grabber and do a series of operations independently. Available operations are as follows:
@@ -308,12 +309,12 @@ Return a ALiCE Onboarding User Status
 - Parameter onError: This handler will give you call back inside block when error response is recieved.
 
 ```js
-     let onboardingCommands = new OnboardingCommands(userToken)
-     onboardingCommands.commandGetUserStatus( (status) => {    //onSuccess
-            		                                    	console.log(status)
-                                           }, (error) => {     //onError
-                                                  console.log(error)
-                                          })
+let onboardingCommands = new OnboardingCommands(userToken)
+onboardingCommands.commandGetUserStatus( (status) => { // onSuccess
+	console.log(status)
+}, (error) => { // onError
+	console.log(error)
+})
 ```
 
 ### Adding selfie command
@@ -324,15 +325,14 @@ Present a ALiCE Onboarding Selfie Capture View sending a video directly to ALiCE
 - Parameter onCancel: This handler will give you call back inside block when user cancel the stage.
 
 ```js
-     let onboardingCommands = new OnboardingCommands(userToken)
-     onboardingCommands.commandAddSelfie( (result) => {    //onSuccess
-            			console.log(result)
-            } , (error)  => {     //onError
-            			console.log(error)
-            },  (cancel) => {    //onCancel
-            			console.log(cancel)
-	   })
-
+let onboardingCommands = new OnboardingCommands(userToken)
+onboardingCommands.commandAddSelfie( (result) => { // onSuccess
+	console.log(result)
+} , (error)  => { // onError
+	console.log(error)
+},  (cancel) => { //onCancel
+	console.log(cancel)
+})
 ```      
 
 ### Create document command
@@ -347,14 +347,14 @@ Creates a document given the type and the issuingCountry:
  This identifier (documentId) is neccessary to add documents.
 
 ```js
-      let onboardingCommands = new OnboardingCommands(userToken)
-      let documentType = DocumentType.IDCARD
-      let issuingCountry = "ESP"
-      onboardingCommands.commandCreateDocument(DocumentType.IDCARD, issuingCountry, (result) => {  //onSuccess
-            			console.log(result)
-            } , (error) => {   //onError
-            		 console.log(error)
-            })
+let onboardingCommands = new OnboardingCommands(userToken)
+let documentType = DocumentType.IDCARD
+let issuingCountry = "ESP"
+onboardingCommands.commandCreateDocument(DocumentType.IDCARD, issuingCountry, (result) => {  //onSuccess
+	console.log(result)
+} , (error) => { // onError
+	console.log(error)
+})
 ```    
 
 ### Add document command
@@ -369,18 +369,18 @@ Present a ALiCE Onboarding Document Capture View sending images to ALiCE Onboard
 - Parameter onCancel: This handler will give you call back inside block when user cancel the stage.
 
 ```js
-      let documentId = "document identifier given by createDocument command"
-	     let documentType = DocumentType.IDCARD;
-	     let side = DocumentSide.BACK;
-	     let issuingCountry = "ESP"
-         let onboardingCommands = new OnboardingCommands(userToken)
-         onboardingCommands.commandAddDocument(documentId, documentType, side, issuingCountry, (result) => { //onSuccess
-            			console.log(result)
-            } , (error) => {    //onError
-            			console.log(error)
-     	      },  (cancel) => {   //onCancel
-            			console.log(cancel)
-          })
+let documentId = "document identifier given by createDocument command"
+let documentType = DocumentType.IDCARD;
+let side = DocumentSide.BACK;
+let issuingCountry = "ESP"
+let onboardingCommands = new OnboardingCommands(userToken)
+onboardingCommands.commandAddDocument(documentId, documentType, side, issuingCountry, (result) => { // onSuccess
+	console.log(result)
+} , (error) => { // onError
+	console.log(error)
+},  (cancel) => { // onCancel
+	console.log(cancel)
+})
 ``` 
 
 ### Authenticate command
