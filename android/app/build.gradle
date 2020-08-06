@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
+        applicationId "com.alicebiometrics.apponboardingsample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
