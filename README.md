@@ -192,7 +192,7 @@ import Onboarding from 'aliceonboarding-reactnative';
 ```
 
 ### Configuration
-
+	
 You can configure the onboarding flow with a simple dictionary:
 
 ```js
@@ -214,6 +214,15 @@ const ONBOARDING_CONFIG = {
     ]
 }
 ```
+
+**Available Stages:** 
+* `addSelfie`: It includes a selfie capturer.
+* `addDocument`: It includes a document capturer. Additionally, you can configure the `type` of document and the `issuingCountry`.
+	* `type` (**required**): Available documents (*idcard, driverlicense, passport, residencepermit*).
+	* `issuingCountry` (**optional**): 
+		You can select an `issuingCountry` from those supported by ALiCE Onboarding. Please, check code and available countries  [here](https://docs.alicebiometrics.com/onboarding/supported_docs.html). 
+		Otherwise, if no `issuingCountry`is passed, it will be requested from the user via a pop-up menu.
+
 
 Please note that the `passport` type does not require specification of `issuingCountry`.
 
