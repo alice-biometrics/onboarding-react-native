@@ -192,7 +192,7 @@ import Onboarding from 'aliceonboarding-reactnative';
 ```
 
 ### Configuration
-
+	
 You can configure the onboarding flow with a simple dictionary:
 
 ```js
@@ -215,6 +215,15 @@ const ONBOARDING_CONFIG = {
 }
 ```
 
+**Available Stages:** 
+* `addSelfie`: It includes a selfie capturer.
+* `addDocument`: It includes a document capturer. Additionally, you can configure the `type` of document and the `issuingCountry`.
+	* `type` (**required**): Available documents (*idcard, driverlicense, passport, residencepermit*).
+	* `issuingCountry` (**optional**): 
+		You can select an `issuingCountry` from those supported by ALiCE Onboarding. Please, check code and available countries  [here](https://docs.alicebiometrics.com/onboarding/supported_docs.html). 
+		Otherwise, if no `issuingCountry`is passed, it will be requested from the user via a pop-up menu.
+
+
 Please note that the `passport` type does not require specification of `issuingCountry`.
 
 ### Run ALiCE Onboarding
@@ -225,13 +234,16 @@ Add our React Native component in your application adding:
 <Onboarding
   userToken={userToken}
   config={ONBOARDING_CONFIG}
-  onSuccess={(value) => console.log("onSuccess:" + value) }
-  onFailure={(value) => console.log("onFailure:" + value) }
+  onSuccess={(userStatusJson) => console.log("onSuccess:" + userStatusJson) }
+  onFailure={(failureJson) => console.log("onFailure:" + failureJson) }
   onCancel={(value) => console.log("onCancel:" + value) }
 />
 ```
 
-Where `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend (see [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)).
+Where:
+ * `userToken` is used to secure requests made by the users on their mobile devices or web clients. You should obtain it from your Backend (see [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)).
+ * `userStatusJson` is a json with user status information, here you can find the `user_id` and information about a successful onboarding. 
+ * `failureJson` is a json with information about an unexpected failure.
 
 see an example [here](app/components/OnboardingProduction/index.js)
 
@@ -261,8 +273,8 @@ Add our React Native component in your application adding:
   firstName={firstName}
   lastName={lastName}
   config={ONBOARDING_CONFIG}
-  onSuccess={(value) => console.log("onSuccess:" + value) }
-  onFailure={(value) => console.log("onFailure:" + value) }
+  onSuccess={(userStatusJson) => console.log("onSuccess:" + userStatusJson) }
+  onFailure={(failureJson) => console.log("onFailure:" + failureJson) }
   onCancel={(value) => console.log("onCancel:" + value) }
 />
 ```
@@ -282,8 +294,8 @@ On the other hand, for production environments we strongly recommend to use your
 <Onboarding
   userToken={this.getUserTokenFromMyBackend()}
   config={ONBOARDING_CONFIG}
-  onSuccess={(value) => console.log("onSuccess:" + value) }
-  onFailure={(value) => console.log("onFailure:" + value) }
+  onSuccess={(userStatusJson) => console.log("onSuccess:" + userStatusJson) }
+  onFailure={(failureJson) => console.log("onFailure:" + failureJson) }
   onCancel={(value) => console.log("onCancel:" + value) }
 />
 ```
