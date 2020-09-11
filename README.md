@@ -155,6 +155,7 @@ allprojects {
 
 Consider:
 
+* The SDK requires at least API 21. So remember to set `minSdkVersion = 21`.
 * Please remember to add to the project a valid Firebase Credentials (see [Android installation](#android)).
 * Add camera permisions to your app, and Add AliceActivity.
    - Modify `android/app/src/main/AndroidManifest.xml` this:
@@ -173,14 +174,14 @@ Consider:
        ```
 
 * We strongly recommended to lock app orientation to portrait.
-* Add Firebase plugin required.
+* Add required Firebase plugin to root `build.gradle`.
 
   ```gradle
   dependencies {
       classpath 'com.google.gms:google-services:4.3.2' 
   }
   ```
-
+  And apply it on the app `build.gradle`:
   ```gradle
   apply plugin: 'com.google.gms.google-services'
   ```
