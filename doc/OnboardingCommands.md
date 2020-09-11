@@ -114,9 +114,9 @@ onboardingCommands.commandAddDocument(documentId, documentType, side, issuingCou
 
 ### Authenticate
 
-Authenticate a User already enrolled and authorized.
+Authenticate (by Face Verification) an enrolled and authorized user. 
 
-Present a ALiCE Onboarding Authenticate Capture View sending a video directly to ALiCE Onboarding platform and checking if user is Login allowed or not.
+Present a ALiCE Onboarding Authenticate Capture View sending a video directly to ALiCE Onboarding platform as long as the user is authorized to do so.
 
 ```js
      let onboardingCommands = new OnboardingCommands(userToken)
