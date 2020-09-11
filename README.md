@@ -68,6 +68,7 @@ Install dependencies with `cocoapods` is required:
 ```console
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
+---
 
 > Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
 
@@ -105,6 +106,8 @@ Or just open the XCode workspace and run it manually:
 open ios/AppOnboardingSample.xcworkspace/
 ```
 
+---
+
 > Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
 
 ```console
@@ -136,6 +139,8 @@ Consider:
   use_frameworks!
   platform :ios, '11.0'
   ```
+
+---
 
 > Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
 
