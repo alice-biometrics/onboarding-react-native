@@ -14,14 +14,9 @@ The main features are:
 ## Table of Contents
 - [Requirements :hammer:](#requirements-hammer)
 - [Installation :computer:](#installation-computer)
-  * [iOS](#ios)
-  * [Android](#android)
 - [Demos :rocket:](#demos-rocket)
-  * [Demo iOS](#demo-ios)
-  * [Demo Android](#demo-android)
 - [Integration :chart_with_upwards_trend:](#integration-chart_with_upwards_trend)
-  * [Setup for iOS](#setup-for-ios)
-  * [Setup for Android](#setup-for-android)
+  * [Setup](#setup)
   * [Import the library](#import-the-library)
   * [Configuration](#configuration)
   * [Run ALiCE Onboarding](#run-alice-onboarding)
@@ -66,7 +61,7 @@ Then, install it as usual:
 yarn install
 ```
 
-### iOS
+> iOS <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="16">
 
 Install dependencies with `cocoapods` is required:
 
@@ -74,7 +69,7 @@ Install dependencies with `cocoapods` is required:
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
 
-### Android
+> Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
 
 For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
 
@@ -98,7 +93,7 @@ android {
 
 We recommend you to start by testing the demos. 
 
-### Demo iOS
+> iOS <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="16">
 
 ```console
 yarn ios # or npx react-native run-ios
@@ -110,7 +105,7 @@ Or just open the XCode workspace and run it manually:
 open ios/AppOnboardingSample.xcworkspace/
 ```
 
-### Demo Android
+> Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
 
 ```console
 npx react-native run-android
@@ -118,8 +113,7 @@ npx react-native run-android
 
 Or just open the Android Studio workspace and run it manually.
 
-
-**React Native Server**
+> React Native Server <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/react-native.png" width="16">
 
 Plase note that a react-native server running is required for both platforms. Run it manually with:
 
@@ -129,7 +123,9 @@ yarn start # react-native start
 
 ## Integration :chart_with_upwards_trend:
 
-### Setup for iOS
+### Setup
+
+> iOS <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="16">
 
 Consider: 
 * Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
@@ -141,7 +137,7 @@ Consider:
   platform :ios, '11.0'
   ```
 
-### Setup for Android
+> Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
 
 ```gradle
 allprojects {
