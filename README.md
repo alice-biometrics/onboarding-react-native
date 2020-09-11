@@ -310,9 +310,9 @@ The commands allow you to open the grabber and do a series of operations indepen
 * Add Selfie
 * Create Document
 * Add Document
-* Get supported documents
-* Authenticate a User already enrolled and authorized
-* Get Documents supported
+* Get Supported Documents
+* Authenticate
+* Get Supported Documents
 
 Please, see [Onboarding Commands Documentation](doc/OnboardingCommands.md) for more info.
 
