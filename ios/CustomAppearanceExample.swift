@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import AliceOnboarding
+
+
+@objc public class CustomAppearanceExample: NSObject {
+  public override init() {
+    /*: For more information, see  https://docs.alicebiometrics.com/onboarding/sdk/ios/customisation.html */
+    OnboardingAppearence.statusView.backgroundColor = UIColor.white
+    OnboardingAppearence.iconsStyle = .shape
+  }
+}
