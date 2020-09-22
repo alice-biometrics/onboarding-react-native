@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, SafeAreaView, ScrollView, Alert } from 'react-native'
-import { OnboardingWithSandbox } from 'aliceonboarding-reactnative';
+import Onboarding from 'aliceonboarding-reactnative';
 
 import styles from './styles'
 
@@ -8,8 +8,7 @@ import styles from './styles'
 
 const ONBOARDING_CONFIG = {
     "stages": [
-        {"stage": "addSelfie"},
-        {"stage": "addDocument", "type": "idcard"},
+        {"stage": "addSelfie"}
     ]
 }
 class OnboardingTrial extends Component {
@@ -26,10 +25,7 @@ class OnboardingTrial extends Component {
 
 	render() {
 		const {heading, input, parent} = styles
-	  	const sandboxToken = this.props.navigation.getParam("sandboxToken", "").replace(/(\r\n|\n|\r)/gm,"")
-	  	const email = this.props.navigation.getParam("email", "")
-	  	const firstName = this.props.navigation.getParam("firstName", "")
-	  	const lastName = this.props.navigation.getParam("lastName", "")
+	  	const userToken = this.props.navigation.getParam("userToken", "")
 
 		return (
 			<View style={parent}>
@@ -37,11 +33,8 @@ class OnboardingTrial extends Component {
 			        <ScrollView
 			          contentInsetAdjustmentBehavior="automatic"
 			          style={styles.scrollView}>
-			          <OnboardingWithSandbox
-			            sandboxToken={sandboxToken}
-			            email={email}
-			            firstName={firstName}
-			            lastName={lastName}
+			          <Onboarding
+			     	    userToken={userToken}
 			            config={ONBOARDING_CONFIG}
 			            onSuccess={(value) => this.backToPrevious("onSuccess", value) }
 			            onFailure={(value) => this.backToPrevious("onFailure", value) }

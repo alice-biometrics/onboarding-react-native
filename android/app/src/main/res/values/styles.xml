@@ -6,4 +6,16 @@
         <item name="android:textColor">#000000</item>
     </style>
 
+    <style name="onboardingIconsStyle">
+        <item name="iconsStyle">Circle</item>
+    </style>
+
+    <style name="onboardingIconsTheme">
+        <item name="iconsTheme">Classic</item>
+    </style>
+
+    <style name="onboardingFontTheme">
+        <item name="fontTheme">Classic</item>
+    </style>
+
 </resources>
