@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { View, Text, TextInput, Button, Alert } from 'react-native'
 import styles from './styles'
 import { withNavigation } from 'react-navigation'
+import { getUserTokenWithSandbox } from 'aliceonboarding-reactnative';
+
 
 
 
@@ -29,12 +31,18 @@ class InputTrial extends Component {
 			return 
 		}
 
-		this.props.navigation.navigate('OnboardingTrial', {
-			sandboxToken: this.state.sandboxToken,
-			email: this.state.email,
-			firstName: this.state.firstName,
-			lastName: this.state.lastName
-		})
+             getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
+            			
+			this.props.navigation.navigate('OnboardingTrial', {
+				userToken: userToken
+			})
+            		} , (error) => {
+            			Alert.alert("Error", error)
+				console.log(error)
+     	    		},  (cancel) => {
+            			Alert.alert("Cancel", cancel)
+            			console.log(cancel)
+            		})
 
 	}
 
@@ -50,12 +58,19 @@ class InputTrial extends Component {
 			return 
 		}
 
-		this.props.navigation.navigate('OnboardingCommandsTrial', {
-			sandboxToken: this.state.sandboxToken,
-			email: this.state.email,
-			firstName: this.state.firstName,
-			lastName: this.state.lastName
-		})
+    		getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
+			this.props.navigation.navigate('OnboardingCommandsView', {
+				userToken: userToken
+				})
+            		} , (error) => {
+            			Alert.alert("Error", error)
+				console.log(error)
+     	    		},  (cancel) => {
+            			Alert.alert("Cancel", cancel)
+            			console.log(cancel)
+            		})
+
+		
 
 	}
 

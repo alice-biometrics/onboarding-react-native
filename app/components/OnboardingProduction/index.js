@@ -6,6 +6,7 @@ import styles from './styles'
 
 const ONBOARDING_CONFIG = {
     "stages": [
+        {"stage": "addSelfie"},
         {"stage": "addDocument", "type": "idcard"},
     ]
 }
