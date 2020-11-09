@@ -3,7 +3,8 @@ import { View, Text, TextInput, Button, Alert, Platform, PermissionsAndroid } fr
 import styles from './styles'
 import { withNavigation } from 'react-navigation'
 
-import { OnboardingCommands, DocumentType, DocumentSide } from 'aliceonboarding-reactnative';
+import { OnboardingCommands, DocumentType, DocumentSide, runOnboarding, getUserTokenWithSandbox } from 'aliceonboarding-reactnative';
+
 
 
 class OnboardingCommandsView extends Component {
@@ -101,9 +102,28 @@ class OnboardingCommandsView extends Component {
             })
 	}
 
+	runOnboarding() {
+		const ONBOARDING_CONFIG = {
+    			"stages": [
+        		{"stage": "addSelfie"},
+        		{"stage": "addDocument", "type": "idcard"},
+    			]
+		}
+         runOnboarding(this.userToken, ONBOARDING_CONFIG , (result) => {
+            			Alert.alert("Result", result)
+				console.log(result)
+            } , (error) => {
+            			Alert.alert("Error", error)
+				console.log(error)
+     	    },  (cancel) => {
+            			Alert.alert("Cancel", cancel)
+            			console.log(cancel)
+            })
+	}
+
 	render() {
 		const {heading, input, parent} = styles
-        this.userToken = this.props.navigation.getParam("userToken", "")
+        	this.userToken = this.props.navigation.getParam("userToken", "")
 
 		return (
 			<View style={parent}>
@@ -114,6 +134,7 @@ class OnboardingCommandsView extends Component {
 				<Button title={"Add Selfie"} onPress={_ => this.addSelfie()}/>
 				<Button title={"Add Document (frontal idcard)"} onPress={_ => this.addDocument()}/>
 				<Button title={"Authenticate"} onPress={_ => this.authenticate()}/>
+				<Button title={"Run Onboarding"} onPress={_ => this.runOnboarding()}/>
 			</View>
 		)
 	}
