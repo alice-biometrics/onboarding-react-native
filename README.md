@@ -63,7 +63,7 @@ yarn install
 
 > iOS <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="16">
 
-Install dependencies with `cocoapods` is required:
+Installing dependencies with `cocoapods` is required:
 
 ```console
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
@@ -73,26 +73,6 @@ If your Podfile `post_install` does not set the `BUILD_LIBRARY_FOR_DISTRIBUTION`
 
 <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios_sdk_yams_build_options_settings.png" width=auto>
 
----
-
-> Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
-
-For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
-
-Copy your google-services.json file for the example application inside the android/app module.
-
-```console
-cp ~/Downloads/google-services.json android/app/
-```
-
-Your `google-services.json` should have an `applicationId` associated. Please, change in `android/app/build.gradle`
-
-```gradle
-android {
- defaultConfig {
-     applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
-}
-```
 
 
 ## Demos :rocket:
@@ -161,7 +141,6 @@ allprojects {
 Consider:
 
 * The SDK requires at least API 21. So remember to set `minSdkVersion = 21`.
-* Please remember to add to the project a valid Firebase Credentials (see [Android installation](#android)).
 * Add camera permisions to your app, and Add AliceActivity.
    - Modify `android/app/src/main/AndroidManifest.xml` this:
 
@@ -179,17 +158,6 @@ Consider:
        ```
 
 * We strongly recommended to lock app orientation to portrait.
-* Add required Firebase plugin to root `build.gradle`.
-
-  ```gradle
-  dependencies {
-      classpath 'com.google.gms:google-services:4.3.2' 
-  }
-  ```
-  And apply it on the app `build.gradle`:
-  ```gradle
-  apply plugin: 'com.google.gms.google-services'
-  ```
 
 
 ### Import the library
