@@ -36,7 +36,6 @@ The main features are:
   * [cocoapods](https://guides.cocoapods.org/using/getting-started.html)
   * All versions of iOS are supported since iOS 11.0 (Swift 5.0)
 * Android specific:
-  * [firebase credentials](https://firebase.google.com/docs/android/setup) (google-services.json)
   * All versions of Android are supported since Android 5.0 (LOLLIPOP).
 
 ## Installation :computer:
@@ -115,7 +114,7 @@ yarn start # react-native start
 
 > iOS <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="16">
 
-Consider: 
+Considerations: 
 * Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
 * We strongly recommended to lock app orientation to portrait.
 * Update AppOnboardingSample/ios/Podfile in order to fit iOS minimum deployment target. Additionaly, add use_frameworks! to your Podfile.
@@ -138,7 +137,7 @@ allprojects {
     }
 ```
 
-Consider:
+Considerations:
 
 * The SDK requires at least API 21. So remember to set `minSdkVersion = 21`.
 * Add camera permisions to your app, and Add AliceActivity.
