@@ -12,6 +12,7 @@ class OnboardingCommandsView extends Component {
 	constructor(props) {
 		super(props)
 		this.userToken = ""
+		requestCameraAndWritePermission();
 	}
 
 	getStatus() {
@@ -141,20 +142,12 @@ class OnboardingCommandsView extends Component {
 }
 
 
-const requestCameraPermission = async () => {
+const requestCameraAndWritePermission = async () => {
   try {
-    const granted = await PermissionsAndroid.request(
+    const granted = await PermissionsAndroid.requestMultiple([
       PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-      {
-        title: "Cool Photo App Camera Permission",
-        message:
-          "Cool Photo App needs access to your camera " +
-          "so you can take awesome pictures.",
-        buttonNeutral: "Ask Me Later",
-        buttonNegative: "Cancel",
-        buttonPositive: "OK"
-      }
-    );
+      PermissionsAndroid.PERMISSIONS.CAMERA]);
+   
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
       console.log("You can use the camera");
     } else {
