@@ -68,7 +68,7 @@ Installing dependencies with `cocoapods` is required:
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
 
-:new:
+:new: :bangbang:
 
 If your Podfile `post_install` does not set the `BUILD_LIBRARY_FOR_DISTRIBUTION` flag to `YES`, you need to set it for both `Alamofire` and `Yams` pods at their `Build Options` settings.
 
