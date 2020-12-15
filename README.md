@@ -74,7 +74,19 @@ If your Podfile `post_install` does not set the `BUILD_LIBRARY_FOR_DISTRIBUTION`
 
 <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios_sdk_yams_build_options_settings.png" width=auto>
 
+or add the following lines in your podfile:
 
+```
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+	if target.name == "Alamofire" || "Yams"
+		target.build_configurations.each do |config|
+        		config.build_settings[‘BUILD_LIBRARY_FOR_DISTRIBUTION’] = ‘YES’
+        	end
+	end
+    end
+end 
+```
 
 ## Demos :rocket:
 
