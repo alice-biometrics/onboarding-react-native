@@ -8,7 +8,8 @@ import styles from './styles'
 
 const ONBOARDING_CONFIG = {
     "stages": [
-        {"stage": "addSelfie"}
+        {"stage": "addSelfie"},
+        {"stage": "addDocument", "type": "idcard"},
     ]
 }
 class OnboardingTrial extends Component {

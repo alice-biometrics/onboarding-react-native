@@ -36,7 +36,6 @@ The main features are:
   * [cocoapods](https://guides.cocoapods.org/using/getting-started.html)
   * All versions of iOS are supported since iOS 11.0 (Swift 5.0)
 * Android specific:
-  * [firebase credentials](https://firebase.google.com/docs/android/setup) (google-services.json)
   * All versions of Android are supported since Android 5.0 (LOLLIPOP).
 
 ## Installation :computer:
@@ -63,32 +62,31 @@ yarn install
 
 > iOS <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="16">
 
-Install dependencies with `cocoapods` is required:
+Installing dependencies with `cocoapods` is required:
 
 ```console
 yarn cocoapods # equivalent to cd ios; pod install; cd ..
 ```
----
 
-> Android <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="16">
+:new: :bangbang:
 
-For Android application is required to add to the project a valid Firebase Credentials. Please, create your credentials for your application (associate your credentials with an `applicationId`):
+If your Podfile `post_install` does not set the `BUILD_LIBRARY_FOR_DISTRIBUTION` flag to `YES`, you need to set it for both `Alamofire` and `Yams` pods at their `Build Options` settings.
 
-Copy your google-services.json file for the example application inside the android/app module.
+<img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios_sdk_yams_build_options_settings.png" width=auto>
 
-```console
-cp ~/Downloads/google-services.json android/app/
+or add the following lines in your Podfile:
+
 ```
-
-Your `google-services.json` should have an `applicationId` associated. Please, change in `android/app/build.gradle`
-
-```gradle
-android {
- defaultConfig {
-     applicationId "<ADD-HERE-YOUR-APPLICATION-ID"
-}
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+	if target.name == "Alamofire" || target.name ==  "Yams"
+		target.build_configurations.each do |config|
+        		config.build_settings[‘BUILD_LIBRARY_FOR_DISTRIBUTION’] = ‘YES’
+        	end
+	end
+    end
+end 
 ```
-
 
 ## Demos :rocket:
 
@@ -130,7 +128,7 @@ yarn start # react-native start
 
 > iOS <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="16">
 
-Consider: 
+Considerations: 
 * Add camera permission to your app. Find more info [here](https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/requesting_authorization_for_media_capture_on_ios).
 * We strongly recommended to lock app orientation to portrait.
 * Update AppOnboardingSample/ios/Podfile in order to fit iOS minimum deployment target. Additionaly, add use_frameworks! to your Podfile.
@@ -153,10 +151,9 @@ allprojects {
     }
 ```
 
-Consider:
+Considerations:
 
 * The SDK requires at least API 21. So remember to set `minSdkVersion = 21`.
-* Please remember to add to the project a valid Firebase Credentials (see [Android installation](#android)).
 * Add camera permisions to your app, and Add AliceActivity.
    - Modify `android/app/src/main/AndroidManifest.xml` this:
 
@@ -174,17 +171,6 @@ Consider:
        ```
 
 * We strongly recommended to lock app orientation to portrait.
-* Add required Firebase plugin to root `build.gradle`.
-
-  ```gradle
-  dependencies {
-      classpath 'com.google.gms:google-services:4.3.2' 
-  }
-  ```
-  And apply it on the app `build.gradle`:
-  ```gradle
-  apply plugin: 'com.google.gms.google-services'
-  ```
 
 
 ### Import the library
