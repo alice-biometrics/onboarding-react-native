@@ -3,7 +3,7 @@
 <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/alice_header.png" width=auto>
 
 ALiCE Onboarding Client SDK can be used in two different ways, by commands (OnboardingCommands) or by full flow (Onboarding).
-The commands allow you to open the grabber and do a series of operations independently. Available operations are as follows:
+The commands allows you to open the capturer and do a series of operations independently. Available operations are as follows:
 
 ## Commands
 - [Get User Status](#get-user-status)
