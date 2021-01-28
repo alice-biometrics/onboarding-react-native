@@ -83,7 +83,7 @@ onboardingCommands.commandCreateDocument(DocumentType.IDCARD, issuingCountry, (r
 
 ### Add Document
 
-Present a ALiCE Onboarding Document Capture View sending images to ALiCE Onboarding platform
+Presents a ALiCE Onboarding Document Capture View sending images to ALiCE Onboarding platform
 
 ```js
 let documentId = "document identifier given by createDocument command"
