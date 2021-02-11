@@ -21,7 +21,7 @@ The main features are:
   * [Configuration](#configuration)
   * [Run ALiCE Onboarding](#run-alice-onboarding)
 - [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)
-  * [Demo test](#Demo test)
+  * [Demo test](#demo-test)
   * [Production](#production)
 - [Onboarding Commands :wrench:](#onboarding-commands-wrench)
 - [Customisation :gear:](#customisation-gear)
