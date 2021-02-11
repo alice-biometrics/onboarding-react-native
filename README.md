@@ -21,7 +21,7 @@ The main features are:
   * [Configuration](#configuration)
   * [Run ALiCE Onboarding](#run-alice-onboarding)
 - [Authentication :closed_lock_with_key:](#authentication-closed_lock_with_key)
-  * [Trial](#trial)
+  * [Demo test](#Demo test)
   * [Production](#production)
 - [Onboarding Commands :wrench:](#onboarding-commands-wrench)
 - [Customisation :gear:](#customisation-gear)
@@ -241,14 +241,14 @@ How can we get the `userToken` to start testing ALiCE Onboarding technology?
 
 `AliceOnboarding` can be used with two differnet authentication modes:
 
-* Trial (Using ALiCE Onboarding Sandbox): Recommended only in the early stages of integration.
+* Demo test (Using ALiCE Onboarding Sandbox): Recommended only in the early stages of integration.
     - Pros: This mode does not need backend integration.
     - Cons: Security compromises. It must be used only for develpment and testing.
 * Production (Using your Backend): In a production deployment we strongly recommend to use your backend to obtain required TOKENS.
     - Pros: Full security level. Only your backend is able to do critical operations.
     - Cons: Needs some integration in your backend.
 
-### Trial
+### Demo test
 
 If you want to test the technology without integrate it with your backend, you can use our Sandbox Service. This service associates a user mail with the ALiCE Onboarding `user_id`. You can create a user and obtain his `USER_TOKEN` already linked with the email.
 
