@@ -65,11 +65,11 @@ class OnboardingCommandsView extends Component {
 
 	addDocument() {
 	     let type = DocumentType.IDCARD;
-	     let side = DocumentSide.BACK;
+	     let side = DocumentSide.FRONT;
 	     let issuingCountry = "ESP"
              let onboardingCommands = new OnboardingCommands(this.userToken)
 
-             onboardingCommands.commandCreateDocument(DocumentType.IDCARD, "ESP", (resultDocumentId) => {
+             onboardingCommands.commandCreateDocument(type, issuingCountry, (resultDocumentId) => {
 				let documentId = resultDocumentId;
             			onboardingCommands.commandAddDocument(documentId, type, side, issuingCountry, (result) => {
             								Alert.alert("Result", result)
