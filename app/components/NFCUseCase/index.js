@@ -66,11 +66,13 @@ class NFCUseCase extends Component {
         let onboardingCommands = new OnboardingCommands(this.userToken)
 
         onboardingCommands.commandAddDocumentNFC(documentId, (result) => {
+                    this.backToPrevious()
                     console.log(result)
                         } , (error) => {
-                          console.log(error)
+                          setTimeout(() => {  Alert.alert("Error", error) }, 200);
                     console.log(error)
-                        },  (cancel) => {
+                        },  (cancel) => {q
+                            this.backToPrevious()
                             console.log(cancel)
                         })
         console.log("commandAddDocumentNFC")
