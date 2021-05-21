@@ -145,7 +145,6 @@ class OnboardingCommandsView extends Component {
 const requestCameraAndWritePermission = async () => {
   try {
     const granted = await PermissionsAndroid.requestMultiple([
-      PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
       PermissionsAndroid.PERMISSIONS.CAMERA]);
    
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {

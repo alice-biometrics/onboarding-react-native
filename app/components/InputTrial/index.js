@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, Button, Alert, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, Button, Alert, TouchableOpacity, PermissionsAndroid } from 'react-native'
 import styles from './styles'
 import { withNavigation } from 'react-navigation'
 import { getUserTokenWithSandbox } from 'aliceonboarding-reactnative';
@@ -17,6 +17,7 @@ class InputTrial extends Component {
 			firstName: "", 
 			lastName: ""
 		}
+		requestCameraAndWritePermission();
 	}
 
 	aliceOnboarding() {
@@ -46,6 +47,7 @@ class InputTrial extends Component {
 
 	}
 
+
 	aliceOnboardingCommands() {
 		const {sandboxToken, email, firstName, lastName} = this.state
 
@@ -58,21 +60,20 @@ class InputTrial extends Component {
 			return 
 		}
 
-    		getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
-			this.props.navigation.navigate('OnboardingCommandsView', {
-				userToken: userToken
-				})
-            		} , (error) => {
-            			Alert.alert("Error", error)
-				console.log(error)
-     	    		},  (cancel) => {
-            			Alert.alert("Cancel", cancel)
-            			console.log(cancel)
-            		})
-
+    getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
+        this.props.navigation.navigate('OnboardingCommandsView', {
+            userToken: userToken
+            })
+                } , (error) => {
+                    Alert.alert("Error", error)
+            console.log(error)
+                },  (cancel) => {
+                    Alert.alert("Cancel", cancel)
+                    console.log(cancel)
+                })
 	}
 
-		aliceNFCUseCase() {
+	aliceNFCUseCase() {
 		const {sandboxToken, email, firstName, lastName} = this.state
 
 		if (sandboxToken == "") {
@@ -84,10 +85,10 @@ class InputTrial extends Component {
 			return
 		}
 
-    		getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
-			this.props.navigation.navigate('NFCUseCase', {
-				userToken: userToken
-				})
+    	getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
+                    this.props.navigation.navigate('NFCUseCase', {
+                        userToken: userToken
+                        })
             		} , (error) => {
             			Alert.alert("Error", error)
 				console.log(error)
@@ -98,11 +99,9 @@ class InputTrial extends Component {
 
 	}
 
-
-
-
 	render() {
 		const {heading, input, parent} = styles
+
 		return (
 			<View style={parent}>
 				<Text style={heading}> ALiCE Onboarding (Trial) </Text>
@@ -134,5 +133,20 @@ class InputTrial extends Component {
 		)
 	}
 }
+
+const requestCameraAndWritePermission = async () => {
+  try {
+    const granted = await PermissionsAndroid.requestMultiple([
+      PermissionsAndroid.PERMISSIONS.CAMERA]);
+
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log("You can use the camera");
+    } else {
+      console.log("Camera permission denied");
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+};
 
 export default withNavigation(InputTrial)

@@ -13,8 +13,8 @@ class NFCUseCase extends Component {
 	  super(props)
 	  this.userToken = "";
       this.documentId = null;
-      this.documentType = DocumentType.IDCARD;
-      this.issuingCountry =  "ESP";
+      this.documentType = DocumentType.PASSPORT;
+      this.issuingCountry =  "AUTO";
       this.stage = stages.FRONTCAPTURE;
       this.onboardingCommands = null;
 	}
