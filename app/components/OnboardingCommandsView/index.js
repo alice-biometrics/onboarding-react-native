@@ -64,8 +64,8 @@ class OnboardingCommandsView extends Component {
 	}
 
 	addDocument() {
-	     let type = DocumentType.IDCARD;
-	     let side = DocumentSide.FRONT;
+	     let type = DocumentType.DRIVERLICENSE;
+	     let side = DocumentSide.BACK;
 	     let issuingCountry = "ESP"
              let onboardingCommands = new OnboardingCommands(this.userToken)
 

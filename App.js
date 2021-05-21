@@ -7,6 +7,7 @@ import OnboardingTrial from './app/components/OnboardingTrial';
 import InputProduction from './app/components/InputProduction';
 import OnboardingProduction from './app/components/OnboardingProduction';
 import OnboardingCommandsView from './app/components/OnboardingCommandsView';
+import NFCUseCase from './app/components/NFCUseCase';
 
 
 const RootStack = createStackNavigator(
@@ -16,7 +17,8 @@ const RootStack = createStackNavigator(
 	  InputProduction: InputProduction,
 	  OnboardingTrial: OnboardingTrial,
 	  OnboardingProduction: OnboardingProduction,
-	  OnboardingCommandsView: OnboardingCommandsView
+	  OnboardingCommandsView: OnboardingCommandsView,
+	  NFCUseCase: NFCUseCase,
 	}
 )
 
