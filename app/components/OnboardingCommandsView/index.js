@@ -12,7 +12,7 @@ class OnboardingCommandsView extends Component {
 	constructor(props) {
 		super(props)
 		this.userToken = ""
-		requestCameraAndWritePermission();
+		requestCameraPermission();
 	}
 
 	getStatus() {
@@ -36,7 +36,7 @@ class OnboardingCommandsView extends Component {
             console.log("commandGetDocumentsSupported")
 	}
 
-    createDocument() {
+    	createDocument() {
          console.log(this.userToken)
          let onboardingCommands = new OnboardingCommands(this.userToken)
 
@@ -48,7 +48,7 @@ class OnboardingCommandsView extends Component {
             console.log("commandCreateDocument")
 	}
 
-   addSelfie() {
+   	addSelfie() {
           let onboardingCommands = new OnboardingCommands(this.userToken)
           onboardingCommands.commandAddSelfie( (result) => {
             			Alert.alert("Result", result)
@@ -142,10 +142,9 @@ class OnboardingCommandsView extends Component {
 }
 
 
-const requestCameraAndWritePermission = async () => {
+const requestCameraPermission = async () => {
   try {
-    const granted = await PermissionsAndroid.requestMultiple([
-      PermissionsAndroid.PERMISSIONS.CAMERA]);
+    const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA);
    
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
       console.log("You can use the camera");
