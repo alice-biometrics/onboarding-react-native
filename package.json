@@ -12,10 +12,10 @@
         "cleancocoapods": "cd ios; rm Podfile.lock; pod deintegrate; cd .."
     },
     "dependencies": {
-        "@react-native-community/masked-view": "^0.1.6",
+        "react": "^17.0.2",
+        "react-native": "^0.67.3",
         "aliceonboarding-reactnative": "^1.10.5",
-        "react": "16.9.0",
-        "react-native": "0.63.2",
+        "@react-native-community/masked-view": "^0.1.6",
         "react-native-gesture-handler": "^1.5.3",
         "react-native-safe-area-context": "^0.6.2",
         "react-native-screens": "^2.0.0-beta.2",
@@ -23,15 +23,15 @@
         "react-navigation-stack": "^2.0.16"
     },
     "devDependencies": {
-        "@babel/core": "^7.7.7",
-        "@babel/runtime": "^7.7.7",
+        "@babel/core": "^7.16.12",
+        "@babel/runtime": "^7.16.7",
         "@react-native-community/eslint-config": "^0.0.5",
-        "babel-jest": "^24.9.0",
+        "babel-jest": "^27.4.6",
+        "metro-react-native-babel-preset": "^0.67.0",
         "babel-plugin-module-resolver": "^4.0.0",
         "escape-string-regexp": "^2.0.0",
         "eslint": "^6.7.2",
         "jest": "^24.9.0",
-        "metro-react-native-babel-preset": "^0.57.0",
         "react-test-renderer": "16.9.0"
     },
     "jest": {
