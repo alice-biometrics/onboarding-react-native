@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, TextInput, Button, Alert, TouchableOpacity, PermissionsAndroid } from 'react-native'
 import styles from './styles'
 import { withNavigation } from 'react-navigation'
-import { getUserTokenWithSandbox } from 'aliceonboarding-reactnative';
+import { getUserTokenWithSandbox, runOnboarding } from 'aliceonboarding-reactnative';
 
 
 
@@ -32,11 +32,17 @@ class InputTrial extends Component {
 			return 
 		}
 
-             getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
-            			
-			this.props.navigation.navigate('OnboardingTrial', {
-				userToken: userToken
-			})
+
+		getUserTokenWithSandbox(this.state.sandboxToken, this.state.email, (userToken) => {
+			const ONBOARDING_CONFIG = {
+    				"stages": [
+        			{"stage": "addSelfie"},
+        			{"stage": "addDocument", "type": "idcard"},
+    				]
+			}
+         		runOnboarding(userToken, ONBOARDING_CONFIG , (result) => {
+            			Alert.alert("Result", result)
+				console.log(result)
             		} , (error) => {
             			Alert.alert("Error", error)
 				console.log(error)
@@ -44,8 +50,11 @@ class InputTrial extends Component {
             			Alert.alert("Cancel", cancel)
             			console.log(cancel)
             		})
+		
+		})
 
 	}
+	
 
 
 	aliceOnboardingCommands() {
