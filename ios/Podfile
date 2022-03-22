@@ -1,5 +1,9 @@
+
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+use_frameworks!
+
 
 platform :ios, '11.0'
 
@@ -17,7 +21,7 @@ target 'AppOnboardingSample' do
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
 
-  use_flipper!({ "Flipper-DoubleConversion" => "1.1.7" })
+  #use_flipper!({ "Flipper-DoubleConversion" => "1.1.7" })
 
   target 'AppOnboardingSampleTests' do
     inherit! :search_paths
@@ -61,6 +65,15 @@ installer.pods_project.targets.each do |target|
     "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules", "_initializeModules:(NSArray<Class> *)modules")
   end
 
+pre_install do |installer|
+ installer.pod_targets.each do |pod|
+   if pod.name.eql?('RNScreens') || pod.name.eql?('RNCMaskedView')
+     def pod.build_type
+       Pod::BuildType.static_library
+     end
+   end
+  end
+end
 
 
 def find_and_replace(dir, findstr, replacestr)
