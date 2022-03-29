@@ -9,13 +9,13 @@ class InputProduction extends Component {
 
 	constructor(props) {
 		super(props)
-		this.state = { 
-			userToken: "", 
+		this.state = {
+			userToken: "",
 		}
 	}
 
 	aliceOnboarding() {
-		const {userToken: userToken} = this.state
+		const { userToken: userToken } = this.state
 
 		if (userToken == "") {
 			Alert.alert("Error", "Please, type your USER TOKEN to test the Onboarding")
@@ -28,18 +28,18 @@ class InputProduction extends Component {
 	}
 
 	render() {
-		const {heading, input, parent} = styles
+		const { heading, input, parent } = styles
 		return (
 			<View style={parent}>
 				<Text style={heading}> ALiCE Onboarding (Production) </Text>
 				<Text>Using your Backend: Your own Backend manages the authentication. We recommend to associate your user_id with alice_user_id in a repository (database).</Text>
-				<TextInput 
-					style={input} 
-					placeholder="USER TOKEN (Required)" 
-					     autoCapitalize = 'none'
-					onChangeText={ text => this.setState({userToken: text}) }
+				<TextInput
+					style={input}
+					placeholder="USER TOKEN (Required)"
+					autoCapitalize='none'
+					onChangeText={text => this.setState({ userToken: text })}
 				/>
-				<Button title={"Test"} onPress={_ => this.aliceOnboarding()}/>
+				<Button title={"Test"} onPress={_ => this.aliceOnboarding()} />
 			</View>
 		)
 	}
