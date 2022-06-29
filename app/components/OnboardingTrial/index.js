@@ -7,6 +7,7 @@ import styles from './styles'
 
 
 const ONBOARDING_CONFIG = {
+        "localization": {"language": "es"},
 	"stages": [
 		{ "stage": "addSelfie" },
 		{ "stage": "addDocument", "type": "idcard" },
