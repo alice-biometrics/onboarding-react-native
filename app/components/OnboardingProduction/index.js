@@ -5,6 +5,7 @@ import Onboarding from 'aliceonboarding-reactnative';
 import styles from './styles'
 
 const ONBOARDING_CONFIG = {
+    	"environment": "SANDBOX",
 	"stages": [
 		{ "stage": "addSelfie" },
 		{ "stage": "addDocument", "type": "idcard" },
