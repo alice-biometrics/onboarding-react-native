@@ -12,6 +12,39 @@ Its main features are:
 
 This repository serves as an example of how to integrate Alice's SDK into an application.
 
+## Installation :computer:
+
+At the project's root
+
+```console
+yarn install
+brew install ios-deploy
+cd ios
+pod install --repo-update
+```
+ 
+## Run the Project:
+### For iOS: <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="30">
+
+```console
+npx react-native run-ios
+```
+
+### For Android: <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/android.png" width="30">
+
+```console
+npx react-native run-android
+```
+
+#### Troubleshooting :hammer:	
+
+If the installation fails and your phone displays a `Could not connect to development server` error:
+
+1. Please make sure your device is in the same network that your computer.
+2. Shake your device, a dialog should pop-up.
+3. Go to `Settings>Debug server host&port for device`.
+4. Introduce your local IP and port 8081.
+
 
 ## Documentation :page_facing_up:
 
