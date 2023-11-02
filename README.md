@@ -20,6 +20,7 @@ At the project's root
 yarn install
 cd ios
 pod install --repo-update
+brew install ios-deploy
 ```
  
 ## Run the Project:
