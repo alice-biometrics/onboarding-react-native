@@ -1,4 +1,4 @@
-# onboarding-react-native  <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/react-native.png" width="30"> [![npm version](https://img.shields.io/npm/v/aliceonboarding-reactnative.svg?style=flat)](https://www.npmjs.com/package/aliceonboarding-reactnative) [![doc](https://img.shields.io/badge/doc-onboarding-51CB56)](https://docs.alicebiometrics.com/onboarding/)
+# onboarding-react-native  <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/react-native.png" width="30"> [![npm version](https://img.shields.io/npm/v/aliceonboarding-reactnative.svg?style=flat)](https://www.npmjs.com/package/aliceonboarding-reactnative) [![doc](https://img.shields.io/badge/doc-onboarding-51CB56)]([https://docs.alicebiometrics.com/onboarding/](https://docs.alicebiometrics.com/onboarding/sections/mobile_client_side_sdks/react_native/))
 
 <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/alice_header.png" width=auto>
 
