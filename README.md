@@ -18,9 +18,9 @@ At the project's root
 
 ```console
 yarn install
+brew install ios-deploy
 cd ios
 pod install --repo-update
-brew install ios-deploy
 ```
  
 ## Run the Project:
