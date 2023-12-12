@@ -1,8 +1,15 @@
-# onboarding-react-native  <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/react-native.png" width="30"> [![npm version](https://img.shields.io/npm/v/aliceonboarding-reactnative.svg?style=flat)](https://www.npmjs.com/package/aliceonboarding-reactnative)
+![Header Graphic](https://github.com/alice-biometrics/custom-emojis/blob/master/images/alice_header.png)
 
-<img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/alice_header.png" width=auto>
+# Alice Onboarding React-Native SDK
 
-Alice React Native SDK is a collection of software development tools to integrate Alice Onboarding.
+![Version](https://img.shields.io/github/v/release/alice-biometrics/onboarding-react-native?style=flat)
+[![API Doc](https://img.shields.io/github/v/release/alice-biometrics/onboarding-react-native?label=API%20doc&color=green&style=flat)](https://docs.alicebiometrics.com/onboarding/sections/mobile_client_side_sdks/react_native/)
+![License](https://img.shields.io/npm/l/aliceonboarding-reactnative.svg?style=flat)
+[![NPM](https://img.shields.io/npm/v/aliceonboarding-reactnative.svg?style=flat)](https://www.npmjs.com/package/aliceonboarding-reactnative)
+
+This repository serves as an example of how to integrate Alice Onboarding React-Native SDK into an application.
+
+Alice Onboarding React-Native SDK is a collection of software development tools to make easier the integration of Alice Onboarding service.
 
 Its main features are:
 
@@ -10,9 +17,7 @@ Its main features are:
 - Communication with the onboarding API to facilitate rapid integration and development.
 - Management of the onboarding flow configuration: requested documents and order.
 
-This repository serves as an example of how to integrate Alice's SDK into an application.
-
-## Installation :computer:
+## Quickstart
 
 At the project's root
 
@@ -23,7 +28,6 @@ cd ios
 pod install --repo-update
 ```
  
-## Run the Project:
 ### For iOS: <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/ios.png" width="30">
 
 ```console
